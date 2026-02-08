@@ -2,6 +2,16 @@ import { mergeProps } from "@base-ui/react/merge-props";
 import { useRender } from "@base-ui/react/use-render";
 import { cn, tv, type VariantProps } from "tailwind-variants";
 
+import { ItemActions } from "./item-actions";
+import { ItemContent } from "./item-content";
+import { ItemDescription } from "./item-description";
+import { ItemFooter } from "./item-footer";
+import { ItemGroup } from "./item-group";
+import { ItemHeader } from "./item-header";
+import { ItemMedia } from "./item-media";
+import { ItemSeparator } from "./item-separator";
+import { ItemTitle } from "./item-title";
+
 const itemVariants = tv({
   base: "group/item flex w-full flex-wrap items-center rounded-md border text-sm outline-none transition-colors duration-100 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 [a]:transition-colors [a]:hover:bg-muted",
   variants: {
@@ -45,13 +55,26 @@ const Item = ({
     },
   });
 
-export { ItemActions } from "./item-actions";
-export { ItemContent } from "./item-content";
-export { ItemDescription } from "./item-description";
-export { ItemFooter } from "./item-footer";
-export { ItemGroup } from "./item-group";
-export { ItemHeader } from "./item-header";
-export { ItemMedia } from "./item-media";
-export { ItemSeparator } from "./item-separator";
-export { ItemTitle } from "./item-title";
-export { Item, itemVariants };
+Item.Actions = ItemActions;
+Item.Content = ItemContent;
+Item.Description = ItemDescription;
+Item.Footer = ItemFooter;
+Item.Group = ItemGroup;
+Item.Header = ItemHeader;
+Item.Media = ItemMedia;
+Item.Separator = ItemSeparator;
+Item.Title = ItemTitle;
+
+export {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemFooter,
+  ItemGroup,
+  ItemHeader,
+  ItemMedia,
+  ItemSeparator,
+  ItemTitle,
+  itemVariants,
+};

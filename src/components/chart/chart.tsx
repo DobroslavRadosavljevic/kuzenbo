@@ -8,8 +8,12 @@ import { cn } from "tailwind-variants";
 
 import type { ChartConfig } from "./chart-types";
 
+import { ChartLegend } from "./chart-legend";
+import { ChartLegendContent } from "./chart-legend-content";
 import { ChartStyle } from "./chart-style";
-import { ChartContext } from "./use-chart";
+import { ChartTooltip } from "./chart-tooltip";
+import { ChartTooltipContent } from "./chart-tooltip-content";
+import { ChartContext, useChart } from "./use-chart";
 
 const ChartContainer = ({
   id,
@@ -42,11 +46,20 @@ const ChartContainer = ({
   );
 };
 
-export { ChartLegend } from "./chart-legend";
-export { ChartLegendContent } from "./chart-legend-content";
-export { ChartStyle } from "./chart-style";
-export { ChartTooltip } from "./chart-tooltip";
-export { ChartTooltipContent } from "./chart-tooltip-content";
+ChartContainer.Legend = ChartLegend;
+ChartContainer.LegendContent = ChartLegendContent;
+ChartContainer.Style = ChartStyle;
+ChartContainer.Tooltip = ChartTooltip;
+ChartContainer.TooltipContent = ChartTooltipContent;
+
 export type { ChartConfig } from "./chart-types";
-export { useChart } from "./use-chart";
-export { ChartContainer };
+
+export {
+  ChartContainer,
+  ChartLegend,
+  ChartLegendContent,
+  ChartStyle,
+  ChartTooltip,
+  ChartTooltipContent,
+  useChart,
+};

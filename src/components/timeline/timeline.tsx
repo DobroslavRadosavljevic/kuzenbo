@@ -1,6 +1,14 @@
 import { type ComponentProps, type ReactNode, useMemo } from "react";
 import { cn, tv, type VariantProps } from "tailwind-variants";
 
+import { TimelineConnector } from "./timeline-connector";
+import { TimelineContent } from "./timeline-content";
+import { TimelineDescription } from "./timeline-description";
+import { TimelineDot } from "./timeline-dot";
+import { TimelineHeader } from "./timeline-header";
+import { TimelineItem } from "./timeline-item";
+import { TimelineTime } from "./timeline-time";
+import { TimelineTitle } from "./timeline-title";
 import { type Direction, TimelineContext } from "./use-timeline";
 
 const timelineVariants = tv({
@@ -89,13 +97,25 @@ const Timeline = ({
   );
 };
 
-export { TimelineConnector } from "./timeline-connector";
-export { TimelineContent } from "./timeline-content";
-export { TimelineDescription } from "./timeline-description";
-export { TimelineDot } from "./timeline-dot";
-export { TimelineHeader } from "./timeline-header";
-export { TimelineItem } from "./timeline-item";
-export { TimelineTime } from "./timeline-time";
-export { TimelineTitle } from "./timeline-title";
-export { Timeline, timelineVariants };
+Timeline.Connector = TimelineConnector;
+Timeline.Content = TimelineContent;
+Timeline.Description = TimelineDescription;
+Timeline.Dot = TimelineDot;
+Timeline.Header = TimelineHeader;
+Timeline.Item = TimelineItem;
+Timeline.Time = TimelineTime;
+Timeline.Title = TimelineTitle;
+
+export {
+  Timeline,
+  TimelineConnector,
+  TimelineContent,
+  TimelineDescription,
+  TimelineDot,
+  TimelineHeader,
+  TimelineItem,
+  TimelineTime,
+  TimelineTitle,
+  timelineVariants,
+};
 export type { TimelineProps };

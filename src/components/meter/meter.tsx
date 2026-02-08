@@ -4,11 +4,13 @@ import { Meter as BaseMeter } from "@base-ui/react/meter";
 import { cn } from "tailwind-variants";
 
 import { MeterIndicator } from "./meter-indicator";
+import { MeterLabel } from "./meter-label";
 import { MeterTrack } from "./meter-track";
+import { MeterValue } from "./meter-value";
 
 export type MeterProps = ComponentProps<typeof BaseMeter.Root>;
 
-export const Meter = ({ className, children, ...props }: MeterProps) => (
+const Meter = ({ className, children, ...props }: MeterProps) => (
   <BaseMeter.Root
     className={cn("w-full space-y-1.5", className)}
     data-slot="meter"
@@ -21,7 +23,14 @@ export const Meter = ({ className, children, ...props }: MeterProps) => (
   </BaseMeter.Root>
 );
 
-export { MeterIndicator, type MeterIndicatorProps } from "./meter-indicator";
-export { MeterLabel, type MeterLabelProps } from "./meter-label";
-export { MeterTrack, type MeterTrackProps } from "./meter-track";
-export { MeterValue, type MeterValueProps } from "./meter-value";
+Meter.Indicator = MeterIndicator;
+Meter.Label = MeterLabel;
+Meter.Track = MeterTrack;
+Meter.Value = MeterValue;
+
+export { Meter, MeterIndicator, MeterLabel, MeterTrack, MeterValue };
+
+export type { MeterIndicatorProps } from "./meter-indicator";
+export type { MeterLabelProps } from "./meter-label";
+export type { MeterTrackProps } from "./meter-track";
+export type { MeterValueProps } from "./meter-value";

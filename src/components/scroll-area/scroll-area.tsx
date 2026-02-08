@@ -24,5 +24,6 @@ const ScrollArea = ({
   </ScrollAreaPrimitive.Root>
 );
 
-export { ScrollBar } from "./scroll-bar";
-export { ScrollArea };
+ScrollArea.Bar = ScrollBar;
+
+export { ScrollArea, ScrollBar };

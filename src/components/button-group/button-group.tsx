@@ -2,6 +2,9 @@ import type { ComponentProps } from "react";
 
 import { cn, tv, type VariantProps } from "tailwind-variants";
 
+import { ButtonGroupSeparator } from "./button-group-separator";
+import { ButtonGroupText } from "./button-group-text";
+
 const buttonGroupVariants = tv({
   base: "flex w-fit items-stretch *:focus-visible:relative *:focus-visible:z-10 has-[>[data-slot=button-group]]:gap-2 has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-r-md [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1",
   variants: {
@@ -30,6 +33,12 @@ const ButtonGroup = ({
   />
 );
 
-export { ButtonGroupSeparator } from "./button-group-separator";
-export { ButtonGroupText } from "./button-group-text";
-export { ButtonGroup, buttonGroupVariants };
+ButtonGroup.Separator = ButtonGroupSeparator;
+ButtonGroup.Text = ButtonGroupText;
+
+export {
+  ButtonGroup,
+  buttonGroupVariants,
+  ButtonGroupSeparator,
+  ButtonGroupText,
+};

@@ -143,8 +143,15 @@ const Calendar = ({
   );
 };
 
-export { CalendarChevron } from "./calendar-chevron";
-export { CalendarDayButton } from "./calendar-day-button";
-export { CalendarRoot } from "./calendar-root";
-export { CalendarWeekNumber } from "./calendar-week-number";
-export { Calendar };
+Calendar.Chevron = CalendarChevron;
+Calendar.DayButton = CalendarDayButton;
+Calendar.Root = CalendarRoot;
+Calendar.WeekNumber = CalendarWeekNumber;
+
+export {
+  Calendar,
+  CalendarChevron,
+  CalendarDayButton,
+  CalendarRoot,
+  CalendarWeekNumber,
+};

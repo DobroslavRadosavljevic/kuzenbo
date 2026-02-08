@@ -2,6 +2,13 @@ import type { ComponentProps } from "react";
 
 import { cn } from "tailwind-variants";
 
+import { PaginationContent } from "./pagination-content";
+import { PaginationEllipsis } from "./pagination-ellipsis";
+import { PaginationItem } from "./pagination-item";
+import { PaginationLink } from "./pagination-link";
+import { PaginationNext } from "./pagination-next";
+import { PaginationPrevious } from "./pagination-previous";
+
 const Pagination = ({ className, ...props }: ComponentProps<"nav">) => (
   <nav
     aria-label="pagination"
@@ -11,10 +18,19 @@ const Pagination = ({ className, ...props }: ComponentProps<"nav">) => (
   />
 );
 
-export { PaginationContent } from "./pagination-content";
-export { PaginationEllipsis } from "./pagination-ellipsis";
-export { PaginationItem } from "./pagination-item";
-export { PaginationLink } from "./pagination-link";
-export { PaginationNext } from "./pagination-next";
-export { PaginationPrevious } from "./pagination-previous";
-export { Pagination };
+Pagination.Content = PaginationContent;
+Pagination.Ellipsis = PaginationEllipsis;
+Pagination.Item = PaginationItem;
+Pagination.Link = PaginationLink;
+Pagination.Next = PaginationNext;
+Pagination.Previous = PaginationPrevious;
+
+export {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+};

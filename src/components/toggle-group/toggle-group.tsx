@@ -9,6 +9,7 @@ import { cn } from "tailwind-variants";
 import type { toggleVariants } from "@/components/toggle/toggle";
 
 import { ToggleGroupContext } from "./toggle-group-context";
+import { ToggleGroupItem } from "./toggle-group-item";
 
 const ToggleGroup = ({
   className,
@@ -44,6 +45,6 @@ const ToggleGroup = ({
   </ToggleGroupPrimitive>
 );
 
-export { ToggleGroupContext } from "./toggle-group-context";
-export { ToggleGroupItem } from "./toggle-group-item";
-export { ToggleGroup };
+ToggleGroup.Item = ToggleGroupItem;
+
+export { ToggleGroup, ToggleGroupContext, ToggleGroupItem };

@@ -3,6 +3,10 @@
 import { Tabs as TabsPrimitive } from "@base-ui/react/tabs";
 import { cn } from "tailwind-variants";
 
+import { TabsContent } from "./tabs-content";
+import { TabsList } from "./tabs-list";
+import { TabsTrigger } from "./tabs-trigger";
+
 const Tabs = ({
   className,
   orientation = "horizontal",
@@ -19,7 +23,8 @@ const Tabs = ({
   />
 );
 
-export { TabsContent } from "./tabs-content";
-export { TabsList } from "./tabs-list";
-export { TabsTrigger } from "./tabs-trigger";
-export { Tabs };
+Tabs.Content = TabsContent;
+Tabs.List = TabsList;
+Tabs.Trigger = TabsTrigger;
+
+export { Tabs, TabsContent, TabsList, TabsTrigger };

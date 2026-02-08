@@ -2,6 +2,16 @@ import type { ComponentProps } from "react";
 
 import { cn, tv, type VariantProps } from "tailwind-variants";
 
+import { FormFieldContent } from "./form-field-content";
+import { FormFieldDescription } from "./form-field-description";
+import { FormFieldError } from "./form-field-error";
+import { FormFieldGroup } from "./form-field-group";
+import { FormFieldLabel } from "./form-field-label";
+import { FormFieldLegend } from "./form-field-legend";
+import { FormFieldSeparator } from "./form-field-separator";
+import { FormFieldSet } from "./form-field-set";
+import { FormFieldTitle } from "./form-field-title";
+
 const fieldVariants = tv({
   base: "group/field flex w-full gap-3 data-[invalid=true]:text-destructive",
   variants: {
@@ -32,13 +42,26 @@ const FormField = ({
   />
 );
 
-export { FormFieldContent } from "./form-field-content";
-export { FormFieldDescription } from "./form-field-description";
-export { FormFieldError } from "./form-field-error";
-export { FormFieldGroup } from "./form-field-group";
-export { FormFieldLabel } from "./form-field-label";
-export { FormFieldLegend } from "./form-field-legend";
-export { FormFieldSeparator } from "./form-field-separator";
-export { FormFieldSet } from "./form-field-set";
-export { FormFieldTitle } from "./form-field-title";
-export { fieldVariants, FormField };
+FormField.Content = FormFieldContent;
+FormField.Description = FormFieldDescription;
+FormField.Error = FormFieldError;
+FormField.Group = FormFieldGroup;
+FormField.Label = FormFieldLabel;
+FormField.Legend = FormFieldLegend;
+FormField.Separator = FormFieldSeparator;
+FormField.Set = FormFieldSet;
+FormField.Title = FormFieldTitle;
+
+export {
+  FormField,
+  fieldVariants,
+  FormFieldContent,
+  FormFieldDescription,
+  FormFieldError,
+  FormFieldGroup,
+  FormFieldLabel,
+  FormFieldLegend,
+  FormFieldSeparator,
+  FormFieldSet,
+  FormFieldTitle,
+};

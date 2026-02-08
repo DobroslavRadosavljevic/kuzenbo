@@ -7,8 +7,6 @@ import { cn, tv, type VariantProps } from "tailwind-variants";
 
 import { RatingStar } from "./rating-star";
 
-export { RatingStar, type RatingStarProps } from "./rating-star";
-
 export const ratingVariants = tv({
   base: [
     // Layout: flex container with centered items
@@ -73,7 +71,7 @@ export type RatingProps = RatingVariants &
     starClassName?: string;
   };
 
-export const Rating = ({
+const Rating = ({
   className,
   size,
   rating,
@@ -129,3 +127,7 @@ export const Rating = ({
     </div>
   );
 };
+
+Rating.Star = RatingStar;
+
+export { Rating, RatingStar };

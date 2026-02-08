@@ -3,6 +3,12 @@
 import { Avatar as AvatarPrimitive } from "@base-ui/react/avatar";
 import { cn } from "tailwind-variants";
 
+import { AvatarBadge } from "./avatar-badge";
+import { AvatarFallback } from "./avatar-fallback";
+import { AvatarGroup } from "./avatar-group";
+import { AvatarGroupCount } from "./avatar-group-count";
+import { AvatarImage } from "./avatar-image";
+
 const Avatar = ({
   className,
   size = "default",
@@ -21,9 +27,17 @@ const Avatar = ({
   />
 );
 
-export { AvatarBadge } from "./avatar-badge";
-export { AvatarFallback } from "./avatar-fallback";
-export { AvatarGroup } from "./avatar-group";
-export { AvatarGroupCount } from "./avatar-group-count";
-export { AvatarImage } from "./avatar-image";
-export { Avatar };
+Avatar.Badge = AvatarBadge;
+Avatar.Fallback = AvatarFallback;
+Avatar.Group = AvatarGroup;
+Avatar.GroupCount = AvatarGroupCount;
+Avatar.Image = AvatarImage;
+
+export {
+  Avatar,
+  AvatarBadge,
+  AvatarFallback,
+  AvatarGroup,
+  AvatarGroupCount,
+  AvatarImage,
+};

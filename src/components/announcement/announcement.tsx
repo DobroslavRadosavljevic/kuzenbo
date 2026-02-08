@@ -4,11 +4,14 @@ import { cn } from "tailwind-variants";
 
 import { Badge } from "@/components/badge/badge";
 
+import { AnnouncementTag } from "./announcement-tag";
+import { AnnouncementTitle } from "./announcement-title";
+
 export type AnnouncementProps = ComponentProps<typeof Badge> & {
   themed?: boolean;
 };
 
-export const Announcement = ({
+const Announcement = ({
   variant = "outline",
   themed = false,
   className,
@@ -26,8 +29,10 @@ export const Announcement = ({
   />
 );
 
-export { AnnouncementTag, type AnnouncementTagProps } from "./announcement-tag";
-export {
-  AnnouncementTitle,
-  type AnnouncementTitleProps,
-} from "./announcement-title";
+Announcement.Tag = AnnouncementTag;
+Announcement.Title = AnnouncementTitle;
+
+export type { AnnouncementTagProps } from "./announcement-tag";
+export type { AnnouncementTitleProps } from "./announcement-title";
+
+export { Announcement, AnnouncementTag, AnnouncementTitle };

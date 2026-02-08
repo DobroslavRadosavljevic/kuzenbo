@@ -5,6 +5,15 @@ import type { ComponentProps } from "react";
 import { Command as CommandPrimitive } from "cmdk";
 import { cn } from "tailwind-variants";
 
+import { CommandDialog } from "./command-dialog";
+import { CommandEmpty } from "./command-empty";
+import { CommandGroup } from "./command-group";
+import { CommandInput } from "./command-input";
+import { CommandItem } from "./command-item";
+import { CommandList } from "./command-list";
+import { CommandSeparator } from "./command-separator";
+import { CommandShortcut } from "./command-shortcut";
+
 const Command = ({
   className,
   ...props
@@ -19,12 +28,23 @@ const Command = ({
   />
 );
 
-export { CommandDialog } from "./command-dialog";
-export { CommandEmpty } from "./command-empty";
-export { CommandGroup } from "./command-group";
-export { CommandInput } from "./command-input";
-export { CommandItem } from "./command-item";
-export { CommandList } from "./command-list";
-export { CommandSeparator } from "./command-separator";
-export { CommandShortcut } from "./command-shortcut";
-export { Command };
+Command.Dialog = CommandDialog;
+Command.Empty = CommandEmpty;
+Command.Group = CommandGroup;
+Command.Input = CommandInput;
+Command.Item = CommandItem;
+Command.List = CommandList;
+Command.Separator = CommandSeparator;
+Command.Shortcut = CommandShortcut;
+
+export {
+  Command,
+  CommandDialog,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+  CommandSeparator,
+  CommandShortcut,
+};

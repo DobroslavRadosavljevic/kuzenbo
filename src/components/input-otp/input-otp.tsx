@@ -3,6 +3,10 @@ import type { ComponentProps } from "react";
 import { OTPInput } from "input-otp";
 import { cn } from "tailwind-variants";
 
+import { InputOTPGroup } from "./input-otp-group";
+import { InputOTPSeparator } from "./input-otp-separator";
+import { InputOTPSlot } from "./input-otp-slot";
+
 const InputOTP = ({
   className,
   containerClassName,
@@ -22,7 +26,8 @@ const InputOTP = ({
   />
 );
 
-export { InputOTPGroup } from "./input-otp-group";
-export { InputOTPSeparator } from "./input-otp-separator";
-export { InputOTPSlot } from "./input-otp-slot";
-export { InputOTP };
+InputOTP.Group = InputOTPGroup;
+InputOTP.Separator = InputOTPSeparator;
+InputOTP.Slot = InputOTPSlot;
+
+export { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot };

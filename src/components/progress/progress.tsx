@@ -4,7 +4,9 @@ import { Progress as ProgressPrimitive } from "@base-ui/react/progress";
 import { cn } from "tailwind-variants";
 
 import { ProgressIndicator } from "./progress-indicator";
+import { ProgressLabel } from "./progress-label";
 import { ProgressTrack } from "./progress-track";
+import { ProgressValue } from "./progress-value";
 
 const Progress = ({
   className,
@@ -25,8 +27,15 @@ const Progress = ({
   </ProgressPrimitive.Root>
 );
 
-export { ProgressIndicator } from "./progress-indicator";
-export { ProgressLabel } from "./progress-label";
-export { ProgressTrack } from "./progress-track";
-export { ProgressValue } from "./progress-value";
-export { Progress };
+Progress.Indicator = ProgressIndicator;
+Progress.Label = ProgressLabel;
+Progress.Track = ProgressTrack;
+Progress.Value = ProgressValue;
+
+export {
+  Progress,
+  ProgressIndicator,
+  ProgressLabel,
+  ProgressTrack,
+  ProgressValue,
+};

@@ -1,6 +1,8 @@
 import { RadioGroup as RadioGroupPrimitive } from "@base-ui/react/radio-group";
 import { cn } from "tailwind-variants";
 
+import { RadioGroupItem } from "./radio-group-item";
+
 const RadioGroup = ({ className, ...props }: RadioGroupPrimitive.Props) => (
   <RadioGroupPrimitive
     className={cn("grid w-full gap-2", className)}
@@ -9,5 +11,6 @@ const RadioGroup = ({ className, ...props }: RadioGroupPrimitive.Props) => (
   />
 );
 
-export { RadioGroupItem } from "./radio-group-item";
-export { RadioGroup };
+RadioGroup.Item = RadioGroupItem;
+
+export { RadioGroup, RadioGroupItem };

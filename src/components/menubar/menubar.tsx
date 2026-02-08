@@ -1,6 +1,22 @@
 import { Menubar as MenubarPrimitive } from "@base-ui/react/menubar";
 import { cn } from "tailwind-variants";
 
+import { MenubarCheckboxItem } from "./menubar-checkbox-item";
+import { MenubarContent } from "./menubar-content";
+import { MenubarGroup } from "./menubar-group";
+import { MenubarItem } from "./menubar-item";
+import { MenubarLabel } from "./menubar-label";
+import { MenubarMenu } from "./menubar-menu";
+import { MenubarPortal } from "./menubar-portal";
+import { MenubarRadioGroup } from "./menubar-radio-group";
+import { MenubarRadioItem } from "./menubar-radio-item";
+import { MenubarSeparator } from "./menubar-separator";
+import { MenubarShortcut } from "./menubar-shortcut";
+import { MenubarSub } from "./menubar-sub";
+import { MenubarSubContent } from "./menubar-sub-content";
+import { MenubarSubTrigger } from "./menubar-sub-trigger";
+import { MenubarTrigger } from "./menubar-trigger";
+
 const Menubar = ({ className, ...props }: MenubarPrimitive.Props) => (
   <MenubarPrimitive
     className={cn(
@@ -12,19 +28,37 @@ const Menubar = ({ className, ...props }: MenubarPrimitive.Props) => (
   />
 );
 
-export { MenubarCheckboxItem } from "./menubar-checkbox-item";
-export { MenubarContent } from "./menubar-content";
-export { MenubarGroup } from "./menubar-group";
-export { MenubarItem } from "./menubar-item";
-export { MenubarLabel } from "./menubar-label";
-export { MenubarMenu } from "./menubar-menu";
-export { MenubarPortal } from "./menubar-portal";
-export { MenubarRadioGroup } from "./menubar-radio-group";
-export { MenubarRadioItem } from "./menubar-radio-item";
-export { MenubarSeparator } from "./menubar-separator";
-export { MenubarShortcut } from "./menubar-shortcut";
-export { MenubarSub } from "./menubar-sub";
-export { MenubarSubContent } from "./menubar-sub-content";
-export { MenubarSubTrigger } from "./menubar-sub-trigger";
-export { MenubarTrigger } from "./menubar-trigger";
-export { Menubar };
+Menubar.CheckboxItem = MenubarCheckboxItem;
+Menubar.Content = MenubarContent;
+Menubar.Group = MenubarGroup;
+Menubar.Item = MenubarItem;
+Menubar.Label = MenubarLabel;
+Menubar.Menu = MenubarMenu;
+Menubar.Portal = MenubarPortal;
+Menubar.RadioGroup = MenubarRadioGroup;
+Menubar.RadioItem = MenubarRadioItem;
+Menubar.Separator = MenubarSeparator;
+Menubar.Shortcut = MenubarShortcut;
+Menubar.Sub = MenubarSub;
+Menubar.SubContent = MenubarSubContent;
+Menubar.SubTrigger = MenubarSubTrigger;
+Menubar.Trigger = MenubarTrigger;
+
+export {
+  Menubar,
+  MenubarCheckboxItem,
+  MenubarContent,
+  MenubarGroup,
+  MenubarItem,
+  MenubarLabel,
+  MenubarMenu,
+  MenubarPortal,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarSub,
+  MenubarSubContent,
+  MenubarSubTrigger,
+  MenubarTrigger,
+};

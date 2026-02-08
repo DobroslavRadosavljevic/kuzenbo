@@ -11,6 +11,28 @@ import {
 } from "@/components/sheet/sheet";
 
 import { SIDEBAR_WIDTH_MOBILE } from "./constants";
+import { SidebarContent } from "./sidebar-content";
+import { SidebarFooter } from "./sidebar-footer";
+import { SidebarGroup } from "./sidebar-group";
+import { SidebarGroupAction } from "./sidebar-group-action";
+import { SidebarGroupContent } from "./sidebar-group-content";
+import { SidebarGroupLabel } from "./sidebar-group-label";
+import { SidebarHeader } from "./sidebar-header";
+import { SidebarInput } from "./sidebar-input";
+import { SidebarInset } from "./sidebar-inset";
+import { SidebarMenu } from "./sidebar-menu";
+import { SidebarMenuAction } from "./sidebar-menu-action";
+import { SidebarMenuBadge } from "./sidebar-menu-badge";
+import { SidebarMenuButton } from "./sidebar-menu-button";
+import { SidebarMenuItem } from "./sidebar-menu-item";
+import { SidebarMenuSkeleton } from "./sidebar-menu-skeleton";
+import { SidebarMenuSub } from "./sidebar-menu-sub";
+import { SidebarMenuSubButton } from "./sidebar-menu-sub-button";
+import { SidebarMenuSubItem } from "./sidebar-menu-sub-item";
+import { SidebarProvider } from "./sidebar-provider";
+import { SidebarRail } from "./sidebar-rail";
+import { SidebarSeparator } from "./sidebar-separator";
+import { SidebarTrigger } from "./sidebar-trigger";
 import { useSidebar } from "./use-sidebar";
 
 const Sidebar = ({
@@ -115,27 +137,52 @@ const Sidebar = ({
   );
 };
 
-export { SidebarContent } from "./sidebar-content";
-export { SidebarFooter } from "./sidebar-footer";
-export { SidebarGroup } from "./sidebar-group";
-export { SidebarGroupAction } from "./sidebar-group-action";
-export { SidebarGroupContent } from "./sidebar-group-content";
-export { SidebarGroupLabel } from "./sidebar-group-label";
-export { SidebarHeader } from "./sidebar-header";
-export { SidebarInput } from "./sidebar-input";
-export { SidebarInset } from "./sidebar-inset";
-export { SidebarMenu } from "./sidebar-menu";
-export { SidebarMenuAction } from "./sidebar-menu-action";
-export { SidebarMenuBadge } from "./sidebar-menu-badge";
-export { SidebarMenuButton } from "./sidebar-menu-button";
-export { SidebarMenuItem } from "./sidebar-menu-item";
-export { SidebarMenuSkeleton } from "./sidebar-menu-skeleton";
-export { SidebarMenuSub } from "./sidebar-menu-sub";
-export { SidebarMenuSubButton } from "./sidebar-menu-sub-button";
-export { SidebarMenuSubItem } from "./sidebar-menu-sub-item";
-export { SidebarProvider } from "./sidebar-provider";
-export { SidebarRail } from "./sidebar-rail";
-export { SidebarSeparator } from "./sidebar-separator";
-export { SidebarTrigger } from "./sidebar-trigger";
-export { useSidebar } from "./use-sidebar";
-export { Sidebar };
+Sidebar.Content = SidebarContent;
+Sidebar.Footer = SidebarFooter;
+Sidebar.Group = SidebarGroup;
+Sidebar.GroupAction = SidebarGroupAction;
+Sidebar.GroupContent = SidebarGroupContent;
+Sidebar.GroupLabel = SidebarGroupLabel;
+Sidebar.Header = SidebarHeader;
+Sidebar.Input = SidebarInput;
+Sidebar.Inset = SidebarInset;
+Sidebar.Menu = SidebarMenu;
+Sidebar.MenuAction = SidebarMenuAction;
+Sidebar.MenuBadge = SidebarMenuBadge;
+Sidebar.MenuButton = SidebarMenuButton;
+Sidebar.MenuItem = SidebarMenuItem;
+Sidebar.MenuSkeleton = SidebarMenuSkeleton;
+Sidebar.MenuSub = SidebarMenuSub;
+Sidebar.MenuSubButton = SidebarMenuSubButton;
+Sidebar.MenuSubItem = SidebarMenuSubItem;
+Sidebar.Provider = SidebarProvider;
+Sidebar.Rail = SidebarRail;
+Sidebar.Separator = SidebarSeparator;
+Sidebar.Trigger = SidebarTrigger;
+
+export {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupAction,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarInput,
+  SidebarInset,
+  SidebarMenu,
+  SidebarMenuAction,
+  SidebarMenuBadge,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarMenuSkeleton,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
+  SidebarProvider,
+  SidebarRail,
+  SidebarSeparator,
+  SidebarTrigger,
+  useSidebar,
+};

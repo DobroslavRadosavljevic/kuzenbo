@@ -2,6 +2,13 @@ import type { ComponentProps } from "react";
 
 import { cn } from "tailwind-variants";
 
+import { CardAction } from "./card-action";
+import { CardContent } from "./card-content";
+import { CardDescription } from "./card-description";
+import { CardFooter } from "./card-footer";
+import { CardHeader } from "./card-header";
+import { CardTitle } from "./card-title";
+
 const Card = ({
   className,
   size = "default",
@@ -18,10 +25,19 @@ const Card = ({
   />
 );
 
-export { CardAction } from "./card-action";
-export { CardContent } from "./card-content";
-export { CardDescription } from "./card-description";
-export { CardFooter } from "./card-footer";
-export { CardHeader } from "./card-header";
-export { CardTitle } from "./card-title";
-export { Card };
+Card.Action = CardAction;
+Card.Content = CardContent;
+Card.Description = CardDescription;
+Card.Footer = CardFooter;
+Card.Header = CardHeader;
+Card.Title = CardTitle;
+
+export {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+};

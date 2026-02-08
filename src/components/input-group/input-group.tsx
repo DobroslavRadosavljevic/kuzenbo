@@ -28,4 +28,11 @@ InputGroup.Input = InputGroupInput;
 InputGroup.Text = InputGroupText;
 InputGroup.Textarea = InputGroupTextarea;
 
-export { InputGroup };
+export {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+  InputGroupText,
+  InputGroupTextarea,
+};

@@ -5,6 +5,14 @@ import { cn } from "tailwind-variants";
 
 import { ScrollBar } from "@/components/scroll-area/scroll-bar";
 
+import { TableBody } from "./table-body";
+import { TableCaption } from "./table-caption";
+import { TableCell } from "./table-cell";
+import { TableFooter } from "./table-footer";
+import { TableHead } from "./table-head";
+import { TableHeader } from "./table-header";
+import { TableRow } from "./table-row";
+
 const Table = ({ className, ...props }: ComponentProps<"table">) => (
   <ScrollAreaPrimitive.Root
     className="relative w-full rounded-lg border bg-card"
@@ -23,11 +31,21 @@ const Table = ({ className, ...props }: ComponentProps<"table">) => (
   </ScrollAreaPrimitive.Root>
 );
 
-export { TableBody } from "./table-body";
-export { TableCaption } from "./table-caption";
-export { TableCell } from "./table-cell";
-export { TableFooter } from "./table-footer";
-export { TableHead } from "./table-head";
-export { TableHeader } from "./table-header";
-export { TableRow } from "./table-row";
-export { Table };
+Table.Body = TableBody;
+Table.Caption = TableCaption;
+Table.Cell = TableCell;
+Table.Footer = TableFooter;
+Table.Head = TableHead;
+Table.Header = TableHeader;
+Table.Row = TableRow;
+
+export {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+};

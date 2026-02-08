@@ -5,6 +5,9 @@ import type { ComponentProps } from "react";
 import { Group } from "react-resizable-panels";
 import { cn } from "tailwind-variants";
 
+import { ResizableHandle } from "./resizable-handle";
+import { ResizablePanel } from "./resizable-panel";
+
 const ResizablePanelGroup = ({
   className,
   ...props
@@ -19,6 +22,7 @@ const ResizablePanelGroup = ({
   />
 );
 
-export { ResizableHandle } from "./resizable-handle";
-export { ResizablePanel } from "./resizable-panel";
-export { ResizablePanelGroup };
+ResizablePanelGroup.Handle = ResizableHandle;
+ResizablePanelGroup.Panel = ResizablePanel;
+
+export { ResizableHandle, ResizablePanel, ResizablePanelGroup };

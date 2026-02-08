@@ -28,4 +28,17 @@ AlertDialog.Portal = AlertDialogPortal;
 AlertDialog.Title = AlertDialogTitle;
 AlertDialog.Trigger = AlertDialogTrigger;
 
-export { AlertDialog };
+export {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogMedia,
+  AlertDialogOverlay,
+  AlertDialogPortal,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+};

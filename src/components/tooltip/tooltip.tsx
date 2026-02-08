@@ -2,7 +2,9 @@
 
 import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip";
 
+import { TooltipContent } from "./tooltip-content";
 import { TooltipProvider } from "./tooltip-provider";
+import { TooltipTrigger } from "./tooltip-trigger";
 
 const Tooltip = ({ ...props }: TooltipPrimitive.Root.Props) => (
   <TooltipProvider>
@@ -10,7 +12,8 @@ const Tooltip = ({ ...props }: TooltipPrimitive.Root.Props) => (
   </TooltipProvider>
 );
 
-export { Tooltip };
-export { TooltipContent } from "./tooltip-content";
-export { TooltipProvider } from "./tooltip-provider";
-export { TooltipTrigger } from "./tooltip-trigger";
+Tooltip.Content = TooltipContent;
+Tooltip.Provider = TooltipProvider;
+Tooltip.Trigger = TooltipTrigger;
+
+export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger };

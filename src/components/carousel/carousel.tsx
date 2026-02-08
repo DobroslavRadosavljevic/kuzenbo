@@ -8,10 +8,15 @@ import {
 } from "react";
 import { cn } from "tailwind-variants";
 
+import { CarouselContent } from "./carousel-content";
+import { CarouselItem } from "./carousel-item";
+import { CarouselNext } from "./carousel-next";
+import { CarouselPrevious } from "./carousel-previous";
 import {
   type CarouselApi,
   CarouselContext,
   type CarouselProps,
+  useCarousel,
 } from "./use-carousel";
 
 const Carousel = ({
@@ -111,10 +116,18 @@ const Carousel = ({
   );
 };
 
-export { CarouselContent } from "./carousel-content";
-export { CarouselItem } from "./carousel-item";
-export { CarouselNext } from "./carousel-next";
-export { CarouselPrevious } from "./carousel-previous";
-export { useCarousel } from "./use-carousel";
+Carousel.Content = CarouselContent;
+Carousel.Item = CarouselItem;
+Carousel.Next = CarouselNext;
+Carousel.Previous = CarouselPrevious;
+
 export type { CarouselApi } from "./use-carousel";
-export { Carousel };
+
+export {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  useCarousel,
+};

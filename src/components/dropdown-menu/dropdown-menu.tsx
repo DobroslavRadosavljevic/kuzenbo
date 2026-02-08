@@ -1,21 +1,53 @@
 import { Menu as MenuPrimitive } from "@base-ui/react/menu";
 
+import { DropdownMenuCheckboxItem } from "./dropdown-menu-checkbox-item";
+import { DropdownMenuContent } from "./dropdown-menu-content";
+import { DropdownMenuGroup } from "./dropdown-menu-group";
+import { DropdownMenuItem } from "./dropdown-menu-item";
+import { DropdownMenuLabel } from "./dropdown-menu-label";
+import { DropdownMenuPortal } from "./dropdown-menu-portal";
+import { DropdownMenuRadioGroup } from "./dropdown-menu-radio-group";
+import { DropdownMenuRadioItem } from "./dropdown-menu-radio-item";
+import { DropdownMenuSeparator } from "./dropdown-menu-separator";
+import { DropdownMenuShortcut } from "./dropdown-menu-shortcut";
+import { DropdownMenuSub } from "./dropdown-menu-sub";
+import { DropdownMenuSubContent } from "./dropdown-menu-sub-content";
+import { DropdownMenuSubTrigger } from "./dropdown-menu-sub-trigger";
+import { DropdownMenuTrigger } from "./dropdown-menu-trigger";
+
 const DropdownMenu = ({ ...props }: MenuPrimitive.Root.Props) => (
   <MenuPrimitive.Root data-slot="dropdown-menu" {...props} />
 );
 
-export { DropdownMenu };
-export { DropdownMenuCheckboxItem } from "./dropdown-menu-checkbox-item";
-export { DropdownMenuContent } from "./dropdown-menu-content";
-export { DropdownMenuGroup } from "./dropdown-menu-group";
-export { DropdownMenuItem } from "./dropdown-menu-item";
-export { DropdownMenuLabel } from "./dropdown-menu-label";
-export { DropdownMenuPortal } from "./dropdown-menu-portal";
-export { DropdownMenuRadioGroup } from "./dropdown-menu-radio-group";
-export { DropdownMenuRadioItem } from "./dropdown-menu-radio-item";
-export { DropdownMenuSeparator } from "./dropdown-menu-separator";
-export { DropdownMenuShortcut } from "./dropdown-menu-shortcut";
-export { DropdownMenuSub } from "./dropdown-menu-sub";
-export { DropdownMenuSubContent } from "./dropdown-menu-sub-content";
-export { DropdownMenuSubTrigger } from "./dropdown-menu-sub-trigger";
-export { DropdownMenuTrigger } from "./dropdown-menu-trigger";
+DropdownMenu.CheckboxItem = DropdownMenuCheckboxItem;
+DropdownMenu.Content = DropdownMenuContent;
+DropdownMenu.Group = DropdownMenuGroup;
+DropdownMenu.Item = DropdownMenuItem;
+DropdownMenu.Label = DropdownMenuLabel;
+DropdownMenu.Portal = DropdownMenuPortal;
+DropdownMenu.RadioGroup = DropdownMenuRadioGroup;
+DropdownMenu.RadioItem = DropdownMenuRadioItem;
+DropdownMenu.Separator = DropdownMenuSeparator;
+DropdownMenu.Shortcut = DropdownMenuShortcut;
+DropdownMenu.Sub = DropdownMenuSub;
+DropdownMenu.SubContent = DropdownMenuSubContent;
+DropdownMenu.SubTrigger = DropdownMenuSubTrigger;
+DropdownMenu.Trigger = DropdownMenuTrigger;
+
+export {
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuGroup,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuPortal,
+  DropdownMenuRadioGroup,
+  DropdownMenuRadioItem,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuTrigger,
+};

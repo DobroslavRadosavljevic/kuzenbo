@@ -20,7 +20,12 @@ import { cn, tv, type VariantProps } from "tailwind-variants";
 
 import { Spinner } from "@/components/spinner/spinner";
 
-import { DropzoneContext } from "./dropzone-context";
+import { DropzoneContext, useDropzoneContext } from "./dropzone-context";
+import {
+  DropzoneAccept,
+  DropzoneIdle,
+  DropzoneReject,
+} from "./dropzone-status";
 
 const dropzoneVariants = tv({
   slots: {
@@ -388,14 +393,23 @@ const Dropzone = ({
   );
 };
 
-export { DropzoneContext, useDropzoneContext } from "./dropzone-context";
+Dropzone.Accept = DropzoneAccept;
+Dropzone.Idle = DropzoneIdle;
+Dropzone.Reject = DropzoneReject;
+
+export type {
+  DropzoneAcceptProps,
+  DropzoneIdleProps,
+  DropzoneRejectProps,
+} from "./dropzone-status";
+export type { DropzoneProps, DropzoneVariants };
+
 export {
+  Dropzone,
   DropzoneAccept,
+  DropzoneContext,
   DropzoneIdle,
   DropzoneReject,
-  type DropzoneAcceptProps,
-  type DropzoneIdleProps,
-  type DropzoneRejectProps,
-} from "./dropzone-status";
-export { Dropzone, dropzoneVariants };
-export type { DropzoneProps, DropzoneVariants };
+  dropzoneVariants,
+  useDropzoneContext,
+};

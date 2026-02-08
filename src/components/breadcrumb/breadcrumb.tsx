@@ -2,6 +2,13 @@ import type { ComponentProps } from "react";
 
 import { cn } from "tailwind-variants";
 
+import { BreadcrumbEllipsis } from "./breadcrumb-ellipsis";
+import { BreadcrumbItem } from "./breadcrumb-item";
+import { BreadcrumbLink } from "./breadcrumb-link";
+import { BreadcrumbList } from "./breadcrumb-list";
+import { BreadcrumbPage } from "./breadcrumb-page";
+import { BreadcrumbSeparator } from "./breadcrumb-separator";
+
 const Breadcrumb = ({ className, ...props }: ComponentProps<"nav">) => (
   <nav
     aria-label="breadcrumb"
@@ -11,10 +18,19 @@ const Breadcrumb = ({ className, ...props }: ComponentProps<"nav">) => (
   />
 );
 
-export { BreadcrumbEllipsis } from "./breadcrumb-ellipsis";
-export { BreadcrumbItem } from "./breadcrumb-item";
-export { BreadcrumbLink } from "./breadcrumb-link";
-export { BreadcrumbList } from "./breadcrumb-list";
-export { BreadcrumbPage } from "./breadcrumb-page";
-export { BreadcrumbSeparator } from "./breadcrumb-separator";
-export { Breadcrumb };
+Breadcrumb.Ellipsis = BreadcrumbEllipsis;
+Breadcrumb.Item = BreadcrumbItem;
+Breadcrumb.Link = BreadcrumbLink;
+Breadcrumb.List = BreadcrumbList;
+Breadcrumb.Page = BreadcrumbPage;
+Breadcrumb.Separator = BreadcrumbSeparator;
+
+export {
+  Breadcrumb,
+  BreadcrumbEllipsis,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+};

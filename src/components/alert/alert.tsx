@@ -2,6 +2,10 @@ import type { ComponentProps } from "react";
 
 import { tv, type VariantProps } from "tailwind-variants";
 
+import { AlertAction } from "./alert-action";
+import { AlertDescription } from "./alert-description";
+import { AlertTitle } from "./alert-title";
+
 const alertVariants = tv({
   base: [
     "group/alert relative grid w-full gap-0.5 rounded-lg border px-4 py-3 text-left text-sm",
@@ -53,7 +57,7 @@ type AlertVariants = VariantProps<typeof alertVariants>;
 
 export type AlertProps = AlertVariants & ComponentProps<"div">;
 
-export const Alert = ({ className, variant, ...props }: AlertProps) => (
+const Alert = ({ className, variant, ...props }: AlertProps) => (
   <div
     className={alertVariants({ variant, className })}
     data-slot="alert"
@@ -62,7 +66,8 @@ export const Alert = ({ className, variant, ...props }: AlertProps) => (
   />
 );
 
-export { alertVariants };
-export { AlertAction } from "./alert-action";
-export { AlertDescription } from "./alert-description";
-export { AlertTitle } from "./alert-title";
+Alert.Action = AlertAction;
+Alert.Description = AlertDescription;
+Alert.Title = AlertTitle;
+
+export { Alert, alertVariants, AlertAction, AlertDescription, AlertTitle };

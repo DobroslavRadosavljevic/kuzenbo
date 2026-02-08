@@ -4,6 +4,16 @@ import type { ComponentProps, CSSProperties } from "react";
 
 import { MediaController } from "media-chrome/react";
 
+import { VideoPlayerContent } from "./video-player-content";
+import { VideoPlayerControlBar } from "./video-player-control-bar";
+import { VideoPlayerMuteButton } from "./video-player-mute-button";
+import { VideoPlayerPlayButton } from "./video-player-play-button";
+import { VideoPlayerSeekBackwardButton } from "./video-player-seek-backward-button";
+import { VideoPlayerSeekForwardButton } from "./video-player-seek-forward-button";
+import { VideoPlayerTimeDisplay } from "./video-player-time-display";
+import { VideoPlayerTimeRange } from "./video-player-time-range";
+import { VideoPlayerVolumeRange } from "./video-player-volume-range";
+
 const variables = {
   "--media-primary-color": "var(--primary)",
   "--media-secondary-color": "var(--background)",
@@ -18,7 +28,7 @@ const variables = {
 
 export type VideoPlayerProps = ComponentProps<typeof MediaController>;
 
-export const VideoPlayer = ({ style, ...props }: VideoPlayerProps) => (
+const VideoPlayer = ({ style, ...props }: VideoPlayerProps) => (
   <MediaController
     style={{
       ...variables,
@@ -28,39 +38,35 @@ export const VideoPlayer = ({ style, ...props }: VideoPlayerProps) => (
   />
 );
 
+VideoPlayer.Content = VideoPlayerContent;
+VideoPlayer.ControlBar = VideoPlayerControlBar;
+VideoPlayer.MuteButton = VideoPlayerMuteButton;
+VideoPlayer.PlayButton = VideoPlayerPlayButton;
+VideoPlayer.SeekBackwardButton = VideoPlayerSeekBackwardButton;
+VideoPlayer.SeekForwardButton = VideoPlayerSeekForwardButton;
+VideoPlayer.TimeDisplay = VideoPlayerTimeDisplay;
+VideoPlayer.TimeRange = VideoPlayerTimeRange;
+VideoPlayer.VolumeRange = VideoPlayerVolumeRange;
+
+export type { VideoPlayerContentProps } from "./video-player-content";
+export type { VideoPlayerControlBarProps } from "./video-player-control-bar";
+export type { VideoPlayerMuteButtonProps } from "./video-player-mute-button";
+export type { VideoPlayerPlayButtonProps } from "./video-player-play-button";
+export type { VideoPlayerSeekBackwardButtonProps } from "./video-player-seek-backward-button";
+export type { VideoPlayerSeekForwardButtonProps } from "./video-player-seek-forward-button";
+export type { VideoPlayerTimeDisplayProps } from "./video-player-time-display";
+export type { VideoPlayerTimeRangeProps } from "./video-player-time-range";
+export type { VideoPlayerVolumeRangeProps } from "./video-player-volume-range";
+
 export {
+  VideoPlayer,
   VideoPlayerContent,
-  type VideoPlayerContentProps,
-} from "./video-player-content";
-export {
   VideoPlayerControlBar,
-  type VideoPlayerControlBarProps,
-} from "./video-player-control-bar";
-export {
   VideoPlayerMuteButton,
-  type VideoPlayerMuteButtonProps,
-} from "./video-player-mute-button";
-export {
   VideoPlayerPlayButton,
-  type VideoPlayerPlayButtonProps,
-} from "./video-player-play-button";
-export {
   VideoPlayerSeekBackwardButton,
-  type VideoPlayerSeekBackwardButtonProps,
-} from "./video-player-seek-backward-button";
-export {
   VideoPlayerSeekForwardButton,
-  type VideoPlayerSeekForwardButtonProps,
-} from "./video-player-seek-forward-button";
-export {
   VideoPlayerTimeDisplay,
-  type VideoPlayerTimeDisplayProps,
-} from "./video-player-time-display";
-export {
   VideoPlayerTimeRange,
-  type VideoPlayerTimeRangeProps,
-} from "./video-player-time-range";
-export {
   VideoPlayerVolumeRange,
-  type VideoPlayerVolumeRangeProps,
-} from "./video-player-volume-range";
+};

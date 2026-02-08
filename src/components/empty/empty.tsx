@@ -2,6 +2,12 @@ import type { ComponentProps } from "react";
 
 import { cn } from "tailwind-variants";
 
+import { EmptyContent } from "./empty-content";
+import { EmptyDescription } from "./empty-description";
+import { EmptyHeader } from "./empty-header";
+import { EmptyMedia } from "./empty-media";
+import { EmptyTitle } from "./empty-title";
+
 const Empty = ({ className, ...props }: ComponentProps<"div">) => (
   <div
     className={cn(
@@ -13,9 +19,17 @@ const Empty = ({ className, ...props }: ComponentProps<"div">) => (
   />
 );
 
-export { EmptyContent } from "./empty-content";
-export { EmptyDescription } from "./empty-description";
-export { EmptyHeader } from "./empty-header";
-export { EmptyMedia } from "./empty-media";
-export { EmptyTitle } from "./empty-title";
-export { Empty };
+Empty.Content = EmptyContent;
+Empty.Description = EmptyDescription;
+Empty.Header = EmptyHeader;
+Empty.Media = EmptyMedia;
+Empty.Title = EmptyTitle;
+
+export {
+  Empty,
+  EmptyContent,
+  EmptyDescription,
+  EmptyHeader,
+  EmptyMedia,
+  EmptyTitle,
+};

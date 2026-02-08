@@ -4,15 +4,30 @@ import type { ComponentProps } from "react";
 
 import { Combobox as ComboboxPrimitive } from "@base-ui/react/combobox";
 
+import { ComboboxChip } from "./combobox-chip";
+import { ComboboxChipRemove } from "./combobox-chip-remove";
+import { ComboboxChips } from "./combobox-chips";
+import { ComboboxChipsInput } from "./combobox-chips-input";
+import { ComboboxClear } from "./combobox-clear";
+import { ComboboxCollection } from "./combobox-collection";
+import { ComboboxContent } from "./combobox-content";
+import { ComboboxEmpty } from "./combobox-empty";
+import { ComboboxGroup } from "./combobox-group";
+import { ComboboxInput } from "./combobox-input";
+import { ComboboxItem } from "./combobox-item";
+import { ComboboxLabel } from "./combobox-label";
+import { ComboboxList } from "./combobox-list";
+import { ComboboxSeparator } from "./combobox-separator";
+import { ComboboxTrigger } from "./combobox-trigger";
+import { ComboboxValue } from "./combobox-value";
+import { useComboboxAnchor } from "./use-combobox-anchor";
+
 export type ComboboxProps<
   ItemValue,
   Multiple extends boolean | undefined = false,
 > = ComponentProps<typeof ComboboxPrimitive.Root<ItemValue, Multiple>>;
 
-export const Combobox = <
-  ItemValue,
-  Multiple extends boolean | undefined = false,
->({
+const Combobox = <ItemValue, Multiple extends boolean | undefined = false>({
   ...props
 }: ComboboxProps<ItemValue, Multiple>) => (
   <ComboboxPrimitive.Root<ItemValue, Multiple>
@@ -21,21 +36,42 @@ export const Combobox = <
   />
 );
 
-export { ComboboxChip } from "./combobox-chip";
-export { ComboboxChipRemove } from "./combobox-chip-remove";
-export { ComboboxChips } from "./combobox-chips";
-export { ComboboxChipsInput } from "./combobox-chips-input";
-export { ComboboxClear } from "./combobox-clear";
-export { ComboboxCollection } from "./combobox-collection";
-export { ComboboxContent } from "./combobox-content";
-export { ComboboxEmpty } from "./combobox-empty";
-export { ComboboxGroup } from "./combobox-group";
-export { ComboboxInput } from "./combobox-input";
-export { ComboboxItem } from "./combobox-item";
-export { ComboboxLabel } from "./combobox-label";
-export { ComboboxList } from "./combobox-list";
-export { ComboboxSeparator } from "./combobox-separator";
-export { ComboboxTrigger } from "./combobox-trigger";
-export { ComboboxValue } from "./combobox-value";
-export { useComboboxAnchor } from "./use-combobox-anchor";
+Combobox.Chip = ComboboxChip;
+Combobox.ChipRemove = ComboboxChipRemove;
+Combobox.Chips = ComboboxChips;
+Combobox.ChipsInput = ComboboxChipsInput;
+Combobox.Clear = ComboboxClear;
+Combobox.Collection = ComboboxCollection;
+Combobox.Content = ComboboxContent;
+Combobox.Empty = ComboboxEmpty;
+Combobox.Group = ComboboxGroup;
+Combobox.Input = ComboboxInput;
+Combobox.Item = ComboboxItem;
+Combobox.Label = ComboboxLabel;
+Combobox.List = ComboboxList;
+Combobox.Separator = ComboboxSeparator;
+Combobox.Trigger = ComboboxTrigger;
+Combobox.Value = ComboboxValue;
+
 export const { useFilter } = ComboboxPrimitive;
+
+export {
+  Combobox,
+  ComboboxChip,
+  ComboboxChipRemove,
+  ComboboxChips,
+  ComboboxChipsInput,
+  ComboboxClear,
+  ComboboxCollection,
+  ComboboxContent,
+  ComboboxEmpty,
+  ComboboxGroup,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxLabel,
+  ComboboxList,
+  ComboboxSeparator,
+  ComboboxTrigger,
+  ComboboxValue,
+  useComboboxAnchor,
+};

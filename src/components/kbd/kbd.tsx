@@ -2,6 +2,8 @@ import type { ComponentProps } from "react";
 
 import { cn } from "tailwind-variants";
 
+import { KbdGroup } from "./kbd-group";
+
 export type KbdProps = ComponentProps<"kbd">;
 
 const Kbd = ({ className, ...props }: KbdProps) => (
@@ -15,5 +17,6 @@ const Kbd = ({ className, ...props }: KbdProps) => (
   />
 );
 
-export { KbdGroup } from "./kbd-group";
-export { Kbd };
+Kbd.Group = KbdGroup;
+
+export { Kbd, KbdGroup };
