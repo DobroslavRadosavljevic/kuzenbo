@@ -9,3 +9,9 @@ dist
 
 # opensrc - source code for packages
 opensrc/
+
+.env
+.env.local
+*.env
+*.env.local
+*.env.*

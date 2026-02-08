@@ -1,0 +1,13 @@
+export { Anchor } from "./anchor";
+export { Blockquote } from "./blockquote";
+export { Heading } from "./heading";
+export { InlineCode } from "./inline-code";
+export { Large } from "./large";
+export { Lead } from "./lead";
+export { List } from "./list";
+export { Muted } from "./muted";
+export { Paragraph } from "./paragraph";
+export { Small } from "./small";
+export { SmallHeading } from "./small-heading";
+export { Table } from "./table";
+export { Text } from "./text";

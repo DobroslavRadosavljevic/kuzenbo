@@ -1,3 +1,6 @@
 [test]
 root = "./tests"
 preload = ["./tests/setup.ts"]
+
+[install.scopes]
+"@hugeicons-pro" = { token = "$HUGEICONS_PRO_TOKEN", url = "https://npm.hugeicons.com" }

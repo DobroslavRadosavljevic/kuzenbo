@@ -22,6 +22,7 @@
     "eslint-plugin-promise/avoid-new": "off",
     "eslint-plugin-import/no-nodejs-modules": "off",
     "eslint-plugin-import/no-relative-parent-imports": "off",
-    "eslint-plugin-unicorn/no-useless-spread": "off"
+    "eslint-plugin-unicorn/no-useless-spread": "off",
+    "eslint/complexity": "off"
   }
 }

@@ -8,7 +8,7 @@ import {
 import { userEvent } from "@testing-library/user-event";
 import { afterEach, describe, expect, it, mock } from "bun:test";
 
-import { Button, formatDate, useToggle } from "../src";
+import { Button, formatDate, useToggle } from "@/index";
 
 afterEach(cleanup);
 

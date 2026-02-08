@@ -1,6 +1,6 @@
-# ⚛️ npm-react-start
+# ⚛️ kuzenbo
 
-A minimal starter template for creating React libraries with TypeScript. Build components, hooks, utilities, and more.
+A React UI components, hooks, and utilities library built with TypeScript.
 
 ## ✨ Features
 
@@ -17,22 +17,17 @@ A minimal starter template for creating React libraries with TypeScript. Build c
 
 ## 🚀 Getting Started
 
-1. Clone or use this template:
+1. Install the package:
 
 ```bash
-git clone https://github.com/dobroslavradosavljevic/npm-react-start.git my-react-library
-cd my-react-library
+npm install kuzenbo
+# or
+yarn add kuzenbo
+# or
+bun add kuzenbo
+# or
+pnpm add kuzenbo
 ```
-
-2. Update `package.json` with your package name, description, and author info.
-
-3. Install dependencies:
-
-```bash
-bun install
-```
-
-4. Start developing in `src/index.tsx`.
 
 ## 📋 Requirements
 
@@ -41,7 +36,7 @@ bun install
 
 ## 📦 Peer Dependencies
 
-This starter is configured for React libraries. Consumers of your package must have React installed:
+This package requires React to be installed in your project:
 
 ```json
 {
@@ -52,7 +47,7 @@ This starter is configured for React libraries. Consumers of your package must h
 }
 ```
 
-React is listed as a **peer dependency** so consumers use their own React version. It is also in **devDependencies** so tests and development work locally.
+React is listed as a **peer dependency** so you use your own React version.
 
 ## 📜 Scripts
 
@@ -94,7 +89,7 @@ React is listed as a **peer dependency** so consumers use their own React versio
 
 ## 🐶 Git Hooks
 
-This template uses Husky for Git hooks:
+This project uses Husky for Git hooks:
 
 - **pre-commit**: Runs `lint-staged` to lint and format staged files
 - **commit-msg**: Validates commit messages follow [Conventional Commits](https://www.conventionalcommits.org/)
@@ -136,7 +131,7 @@ When you push a version tag (`v*`), the release workflow:
 
 ### Setup for Publishing (Trusted Publishing)
 
-This template uses [npm Trusted Publishing](https://docs.npmjs.com/trusted-publishers/) with OIDC - no tokens required.
+This project uses [npm Trusted Publishing](https://docs.npmjs.com/trusted-publishers/) with OIDC - no tokens required.
 
 1. Go to [npmjs.com](https://www.npmjs.com) and navigate to your package settings
 2. Under **Publishing access**, click **Add trusted publisher**
