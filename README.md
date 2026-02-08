@@ -1,8 +1,6 @@
 # ⚛️ kuzenbo
 
-A modern React component library that combines the best design patterns and features from shadcn, HeroUI, and Mantine.
-
-This library is highly inspired by [shadcn](https://ui.shadcn.com/), [HeroUI](https://www.heroui.com/), and [Mantine](https://mantine.dev/), combining the best of all worlds together.
+A modern React component library that combines the best design patterns and features from [shadcn](https://ui.shadcn.com/), [HeroUI](https://www.heroui.com/), and [Mantine](https://mantine.dev/).
 
 ## ✨ Features
 
