@@ -557,7 +557,7 @@ export {
   ResizableHandle,
   ResizablePanel,
   ResizablePanelGroup,
-} from "./components/resizable/resizable-panel-group";
+} from "./components/resizable/resizable";
 
 export { ScrollArea, ScrollBar } from "./components/scroll-area/scroll-area";
 
@@ -739,23 +739,6 @@ export {
   TooltipProvider,
   TooltipTrigger,
 } from "./components/tooltip/tooltip";
-
-// Typography
-export {
-  Anchor,
-  Blockquote,
-  Heading,
-  InlineCode,
-  Large,
-  Lead,
-  List,
-  Muted,
-  Paragraph,
-  Small,
-  SmallHeading,
-  Text,
-} from "./components/typography";
-export { Table as TypographyTable } from "./components/typography";
 
 export {
   VideoPlayer,

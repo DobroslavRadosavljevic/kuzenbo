@@ -1,7 +1,27 @@
+import { readdirSync } from "node:fs";
+import { resolve } from "node:path";
 import { defineConfig } from "tsdown";
 
+const componentsDir = resolve(import.meta.dirname, "src/components");
+const componentEntries = Object.fromEntries(
+  readdirSync(componentsDir, { withFileTypes: true })
+    .filter((d) => d.isDirectory())
+    .map((d) => [`ui/${d.name}`, `./src/components/${d.name}/${d.name}.tsx`])
+);
+
+const hooksDir = resolve(import.meta.dirname, "src/hooks");
+const hookEntries = Object.fromEntries(
+  readdirSync(hooksDir)
+    .filter((f) => f.endsWith(".ts"))
+    .map((f) => [`hooks/${f.replace(".ts", "")}`, `./src/hooks/${f}`])
+);
+
 export default defineConfig({
-  entry: ["./src/index.tsx"],
+  entry: {
+    index: "./src/index.tsx",
+    ...componentEntries,
+    ...hookEntries,
+  },
   platform: "neutral",
   external: [
     "react",
