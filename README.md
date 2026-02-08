@@ -1,174 +1,185 @@
-# ⚛️ kuzenbo
+# kuzenbo
 
-A modern React component library that combines the best design patterns and features from [shadcn](https://ui.shadcn.com/), [HeroUI](https://www.heroui.com/), and [Mantine](https://mantine.dev/).
+A modern React component library with 75+ components built on [@base-ui/react](https://base-ui.com/) primitives, styled with [Tailwind CSS v4](https://tailwindcss.com/) and [tailwind-variants](https://www.tailwind-variants.org/).
 
-## ✨ Features
+Combines the best design patterns from [shadcn/ui](https://ui.shadcn.com/), [HeroUI](https://www.heroui.com/), and [Mantine](https://mantine.dev/).
 
-- ⚛️ **React** - Build reusable React code (components, hooks, utilities) with JSX
-- 🔷 **TypeScript** - Full type safety with automatic declaration generation
-- ⚡ **tsdown** - Fast bundling powered by Rolldown
-- 🧪 **Bun Test** - Fast built-in test runner with Happy DOM
-- 🧩 **React Testing Library** - Testing for components and hooks with user-centric queries
-- 🎨 **Ultracite** - Zero-config linting and formatting with Oxlint + Oxfmt
-- 📦 **ESM** - Ships as ES modules with TypeScript declarations
-- 🚀 **GitHub Actions** - CI/CD pipeline with automated testing and npm publishing
-- 🐶 **Husky** - Pre-commit hooks for code quality enforcement
-- 📝 **Commitlint** - Conventional commit message validation
-
-## 🚀 Getting Started
-
-1. Install the package:
+## Installation
 
 ```bash
 npm install kuzenbo
-# or
-yarn add kuzenbo
-# or
-bun add kuzenbo
-# or
-pnpm add kuzenbo
 ```
 
-## 📋 Requirements
+### Peer Dependencies
 
-- **Bun** 1.3.6+ (for development and testing)
-- **Node.js** 22+ (enforced via `engines` field; 24+ used in CI/CD for publishing)
+React is required:
 
-## 📦 Peer Dependencies
+```bash
+npm install react react-dom
+```
 
-This package requires React to be installed in your project:
+Some components require additional peer dependencies. Install only what you need:
 
-```json
-{
-  "peerDependencies": {
-    "react": "^18.0.0 || ^19.0.0",
-    "react-dom": "^18.0.0 || ^19.0.0"
-  }
+| Component   | Required packages                     |
+| ----------- | ------------------------------------- |
+| Calendar    | `react-day-picker`                    |
+| Carousel    | `embla-carousel embla-carousel-react` |
+| Chart       | `recharts`                            |
+| Command     | `cmdk`                                |
+| CountryFlag | `country-flag-icons`                  |
+| Drawer      | `vaul`                                |
+| Dropzone    | `react-dropzone`                      |
+| EmojiPicker | `frimousse`                           |
+| InputOTP    | `input-otp`                           |
+| Marquee     | `react-fast-marquee`                  |
+| QRCode      | `qrcode culori`                       |
+| Resizable   | `react-resizable-panels`              |
+| Textarea    | `react-textarea-autosize`             |
+| VideoPlayer | `media-chrome`                        |
+
+## Tailwind CSS v4 Setup
+
+Kuzenbo requires Tailwind CSS v4. Add the following to your main CSS file:
+
+```css
+@import "tailwindcss";
+@import "kuzenbo/styles.css";
+@source "../node_modules/kuzenbo/dist";
+```
+
+- `@import "kuzenbo/styles.css"` registers the theme tokens (colors, radius) with Tailwind and provides default light/dark mode values
+- `@source` tells Tailwind to scan the library's dist for utility classes
+
+> The `@source` path is relative to your CSS file. Adjust if your CSS file is not at the project root.
+
+### Customizing the theme
+
+The default theme uses the shadcn/ui zinc palette. Override any token by redefining its CSS variable:
+
+```css
+:root {
+  --primary: oklch(0.6 0.25 260);
+  --radius: 0.5rem;
 }
 ```
 
-React is listed as a **peer dependency** so you use your own React version.
+## Usage
 
-## 📜 Scripts
+### Simple component
+
+```tsx
+import { Button } from "kuzenbo";
+
+export default function App() {
+  return (
+    <Button variant="default" size="lg">
+      Click me
+    </Button>
+  );
+}
+```
+
+### Compound component (dot notation)
+
+```tsx
+import { Dialog } from "kuzenbo";
+
+export default function App() {
+  return (
+    <Dialog>
+      <Dialog.Trigger>Open</Dialog.Trigger>
+      <Dialog.Portal>
+        <Dialog.Overlay />
+        <Dialog.Content>
+          <Dialog.Header>
+            <Dialog.Title>Title</Dialog.Title>
+            <Dialog.Description>Description</Dialog.Description>
+          </Dialog.Header>
+        </Dialog.Content>
+      </Dialog.Portal>
+    </Dialog>
+  );
+}
+```
+
+### Component with optional peer dep
+
+```bash
+npm install react-day-picker
+```
+
+```tsx
+import { Calendar } from "kuzenbo";
+
+export default function App() {
+  return <Calendar mode="single" />;
+}
+```
+
+## Components
+
+### Layout
+
+Accordion, AspectRatio, Card, Collapsible, Empty, Resizable, ScrollArea, Separator, Spacer, Surface
+
+### Forms
+
+Autocomplete, Checkbox, CheckboxGroup, Combobox, Dropzone, FormField, Input, InputGroup, InputOTP, Label, NumberField, RadioGroup, Select, Slider, Switch, Textarea
+
+### Navigation
+
+Breadcrumb, Menubar, NavigationMenu, Pagination, Sidebar, Tabs, Toolbar
+
+### Feedback
+
+Alert, AlertDialog, Announcement, Meter, Progress, Rating, Skeleton, Spinner, Toast, Tooltip
+
+### Overlay
+
+Dialog, Drawer, DropdownMenu, ContextMenu, HoverCard, Popover, Sheet
+
+### Data Display
+
+Avatar, Badge, Calendar, Carousel, Chart, CountryFlag, EmojiPicker, GoogleLogo, Kbd, Marquee, Pill, QRCode, Table, ThemeIcon, Timeline, VideoPlayer
+
+### Actions
+
+Affix, Button, ButtonGroup, Command, Toggle, ToggleGroup
+
+### Typography
+
+Anchor, Blockquote, Heading, InlineCode, Large, Lead, List, Muted, Paragraph, Small, SmallHeading, Text
+
+### Utilities
+
+Item, Portal
+
+## Development
 
 | Command             | Description                         |
 | ------------------- | ----------------------------------- |
 | `bun run build`     | Build the package                   |
 | `bun run dev`       | Build in watch mode                 |
 | `bun run test`      | Run tests                           |
-| `bun run lint`      | Check for linting issues            |
-| `bun run format`    | Fix linting and formatting issues   |
+| `bun run lint`      | Check linting and formatting        |
+| `bun run format`    | Auto-fix lint/format issues         |
 | `bun run typecheck` | Run TypeScript type checking        |
 | `bun run bump`      | Bump version and generate changelog |
 
-## 📁 Project Structure
+### Requirements
 
-```txt
-├── src/
-│   └── index.tsx         # Package entry point (components, hooks, utilities)
-├── tests/
-│   ├── index.test.tsx    # Tests (React Testing Library)
-│   └── setup.ts          # Test setup (Happy DOM)
-├── dist/                 # Build output (generated)
-├── .github/
-│   └── workflows/
-│       ├── ci.yml        # CI pipeline (lint, test, build)
-│       └── release.yml   # Automated npm publishing
-├── .husky/
-│   ├── pre-commit        # Runs lint-staged before commits
-│   └── commit-msg        # Validates commit messages
-├── tsdown.config.ts      # Build configuration
-├── tsconfig.json         # TypeScript configuration
-├── commitlint.config.ts  # Commit message rules
-├── bunfig.toml          # Bun test configuration
-├── .oxlintrc.json       # Oxlint configuration
-├── .oxfmtrc.jsonc       # Oxfmt configuration
-├── CONTRIBUTING.md      # Contribution guidelines
-└── package.json
-```
+- **Bun** 1.3.6+
+- **Node.js** 22+
 
-## 🐶 Git Hooks
-
-This project uses Husky for Git hooks:
+### Git Hooks
 
 - **pre-commit**: Runs `lint-staged` to lint and format staged files
-- **commit-msg**: Validates commit messages follow [Conventional Commits](https://www.conventionalcommits.org/)
+- **commit-msg**: Validates [Conventional Commits](https://www.conventionalcommits.org/) format
 
-### Commit Message Format
+## Contributing
 
-```
-type(scope): description
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
 
-# Examples:
-feat: add new feature
-fix: resolve bug in parser
-docs: update README
-chore: update dependencies
-```
-
-**Rules**: Header and body max length is 200 characters (configured in `commitlint.config.ts`).
-
-## 🔄 CI/CD
-
-### Continuous Integration
-
-On every push to `main` and pull request, the CI workflow runs:
-
-- ✅ Lint check
-- ✅ Type check
-- ✅ Tests
-- ✅ Build
-
-Uses **Bun 1.3.8** for all operations.
-
-### Automated Releases
-
-When you push a version tag (`v*`), the release workflow:
-
-1. Runs the CI workflow (lint, typecheck, build, test)
-2. Publishes to npm with provenance (using Node.js 24)
-3. Creates a GitHub release with auto-generated notes
-
-### Setup for Publishing (Trusted Publishing)
-
-This project uses [npm Trusted Publishing](https://docs.npmjs.com/trusted-publishers/) with OIDC - no tokens required.
-
-1. Go to [npmjs.com](https://www.npmjs.com) and navigate to your package settings
-2. Under **Publishing access**, click **Add trusted publisher**
-3. Configure GitHub Actions as the trusted publisher:
-   - **Repository owner**: your GitHub username or org
-   - **Repository name**: your repo name
-   - **Workflow file**: `release.yml`
-   - **Environment** (optional): leave blank
-
-That's it - no secrets or tokens to manage. The workflow uses short-lived OIDC credentials that are automatically generated for each run.
-
-## 🚢 Publishing
-
-1. Bump the version (creates a tag):
-
-```bash
-bun run bump
-```
-
-2. Push the tag to trigger the release workflow:
-
-```bash
-git push --tags
-```
-
-Or publish manually:
-
-```bash
-npm publish --provenance --access public
-```
-
-Note: The release workflow uses `npm publish` (not `bun publish`) for npm Trusted Publishing compatibility.
-
-## 🤝 Contributing
-
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on contributing to this project.
-
-## 📄 License
+## License
 
 MIT
