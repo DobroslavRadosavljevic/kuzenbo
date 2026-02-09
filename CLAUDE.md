@@ -16,6 +16,7 @@ bun run format       # Auto-fix lint/format (ultracite fix)
 bun run typecheck    # tsc --noEmit
 bun test             # Run all tests (bun test runner + happy-dom)
 bun test --filter "Button"  # Run a single test by name
+bun run quality      # Run lint + typecheck + build + test (quality gate)
 ```
 
 **Do not use biome, eslint, or prettier directly.** Linting and formatting are handled exclusively by `ultracite` (wrapping `oxlint` + `oxfmt`).
