@@ -1,5 +1,5 @@
 import { Radio as RadioPrimitive } from "@base-ui/react/radio";
-import { CircleIcon } from "@hugeicons-pro/core-stroke-rounded";
+import { CircleIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { cn } from "tailwind-variants";
 

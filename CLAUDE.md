@@ -28,7 +28,7 @@ Configured in `.oxfmtrc.jsonc`: 80 char print width, 2 spaces, double quotes, se
 
 ### Entry Point
 
-`src/index.tsx` — currently a minimal placeholder with a basic Button, useToggle hook, and formatDate utility. The real components live in `src/components/` and are not yet wired into the main export.
+`src/index.tsx` — exports all 75+ components, hooks, and utilities from `src/components/` and `src/hooks/`.
 
 ### Component Structure
 
@@ -86,7 +86,7 @@ Conventional commits enforced by commitlint + husky (max 200 char header/body). 
 
 - **@base-ui/react** — headless UI primitives (Select, Dialog, Popover, Tooltip, etc.)
 - **tailwind-variants** — variant-based styling with `tv()` and `cn()`
-- **@hugeicons/react** + **@hugeicons-pro/\*** — icon system (pro icons require `HUGEICONS_PRO_TOKEN`)
+- **@hugeicons/react** + **@hugeicons/core-free-icons** — icon system
 - **embla-carousel** — carousel, **react-day-picker** — calendar, **cmdk** — command palette
 - **vaul** — drawer, **motion** — animations, **recharts** — charts
 - **@tanstack/react-table** + **@tanstack/react-virtual** — table with virtualization

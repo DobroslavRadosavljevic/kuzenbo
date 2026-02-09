@@ -146,7 +146,7 @@ Avatar, Badge, Calendar, Carousel, Chart, CountryFlag, EmojiPicker, GoogleLogo, 
 
 Affix, Button, ButtonGroup, Command, Toggle, ToggleGroup
 
-### Typography
+### Typography (planned)
 
 Anchor, Blockquote, Heading, InlineCode, Large, Lead, List, Muted, Paragraph, Small, SmallHeading, Text
 

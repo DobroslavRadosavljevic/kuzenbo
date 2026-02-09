@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 
-import { MoreHorizontalCircle01Icon } from "@hugeicons-pro/core-stroke-rounded";
+import { MoreHorizontalCircle01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { cn } from "tailwind-variants";
 

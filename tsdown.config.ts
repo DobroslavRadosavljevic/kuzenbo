@@ -27,7 +27,7 @@ export default defineConfig({
     "react",
     "react-dom",
     "@base-ui/react",
-    "@hugeicons-pro/core-stroke-rounded",
+    "@hugeicons/core-free-icons",
     "@hugeicons/react",
     "tailwind-variants",
     "cmdk",

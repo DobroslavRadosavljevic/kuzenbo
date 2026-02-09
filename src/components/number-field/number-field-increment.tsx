@@ -1,7 +1,7 @@
 import type { ComponentProps } from "react";
 
 import { NumberField as BaseNumberField } from "@base-ui/react/number-field";
-import { Add01Icon } from "@hugeicons-pro/core-stroke-rounded";
+import { Add01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { cn } from "tailwind-variants";
 

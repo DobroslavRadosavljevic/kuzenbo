@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 
-import { MinusSignIcon } from "@hugeicons-pro/core-stroke-rounded";
+import { MinusSignIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 
 const InputOTPSeparator = ({ ...props }: ComponentProps<"div">) => (

@@ -41,5 +41,8 @@ jobs:
       - name: Build
         run: bun run build
 
+      - name: Build Storybook
+        run: bun run build-storybook
+
       - name: Test
         run: bun test --coverage

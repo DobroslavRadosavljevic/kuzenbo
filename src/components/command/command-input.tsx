@@ -2,7 +2,7 @@
 
 import type { ComponentProps } from "react";
 
-import { SearchIcon } from "@hugeicons-pro/core-stroke-rounded";
+import { SearchIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Command as CommandPrimitive } from "cmdk";
 import { cn } from "tailwind-variants";

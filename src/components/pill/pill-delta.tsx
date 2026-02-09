@@ -2,7 +2,7 @@ import {
   ArrowDown01Icon,
   ArrowUp01Icon,
   MinusSignIcon,
-} from "@hugeicons-pro/core-stroke-rounded";
+} from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { cn } from "tailwind-variants";
 

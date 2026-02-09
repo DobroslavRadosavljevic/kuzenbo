@@ -1,6 +1,6 @@
 "use client";
 
-import { SidebarLeftIcon } from "@hugeicons-pro/core-stroke-rounded";
+import { SidebarLeftIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { useCallback, type ComponentProps } from "react";
 import { cn } from "tailwind-variants";

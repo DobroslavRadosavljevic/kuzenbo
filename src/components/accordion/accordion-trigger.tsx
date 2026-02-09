@@ -1,8 +1,5 @@
 import { Accordion as AccordionPrimitive } from "@base-ui/react/accordion";
-import {
-  ArrowDown01Icon,
-  ArrowUp01Icon,
-} from "@hugeicons-pro/core-stroke-rounded";
+import { ArrowDown01Icon, ArrowUp01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { cn } from "tailwind-variants";
 

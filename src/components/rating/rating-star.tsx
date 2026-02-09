@@ -2,7 +2,7 @@
 
 import type { ComponentProps } from "react";
 
-import { StarIcon } from "@hugeicons-pro/core-stroke-rounded";
+import { StarIcon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { cn, tv, type VariantProps } from "tailwind-variants";
 

@@ -2,6 +2,9 @@ import type { StorybookConfig } from "@storybook/react-vite";
 
 import tailwindcss from "@tailwindcss/postcss";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const config: StorybookConfig = {
   framework: "@storybook/react-vite",
