@@ -6,7 +6,10 @@ const AccordionItem = ({
   ...props
 }: AccordionPrimitive.Item.Props) => (
   <AccordionPrimitive.Item
-    className={cn("not-last:border-b", className)}
+    className={cn(
+      "border-b border-border [&:last-child]:border-b-0",
+      className
+    )}
     data-slot="accordion-item"
     {...props}
   />

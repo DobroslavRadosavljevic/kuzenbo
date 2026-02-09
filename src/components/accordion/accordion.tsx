@@ -7,7 +7,7 @@ import { AccordionTrigger } from "./accordion-trigger";
 
 const Accordion = ({ className, ...props }: AccordionPrimitive.Root.Props) => (
   <AccordionPrimitive.Root
-    className={cn("flex w-full flex-col", className)}
+    className={cn("flex min-w-0 w-full flex-col", className)}
     data-slot="accordion"
     {...props}
   />

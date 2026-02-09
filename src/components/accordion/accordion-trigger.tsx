@@ -19,13 +19,13 @@ const AccordionTrigger = ({
     >
       {children}
       <HugeiconsIcon
-        className="pointer-events-none shrink-0 group-aria-expanded/accordion-trigger:hidden"
+        className="pointer-events-none shrink-0 group-data-[panel-open]/accordion-trigger:hidden"
         data-slot="accordion-trigger-icon"
         icon={ArrowDown01Icon}
         strokeWidth={2}
       />
       <HugeiconsIcon
-        className="pointer-events-none hidden shrink-0 group-aria-expanded/accordion-trigger:inline"
+        className="pointer-events-none hidden shrink-0 group-data-[panel-open]/accordion-trigger:inline"
         data-slot="accordion-trigger-icon"
         icon={ArrowUp01Icon}
         strokeWidth={2}

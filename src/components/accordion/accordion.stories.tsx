@@ -13,15 +13,17 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <Accordion>
-      <Accordion.Item value="1">
-        <Accordion.Trigger>Item 1</Accordion.Trigger>
-        <Accordion.Content>Content for item 1</Accordion.Content>
-      </Accordion.Item>
-      <Accordion.Item value="2">
-        <Accordion.Trigger>Item 2</Accordion.Trigger>
-        <Accordion.Content>Content for item 2</Accordion.Content>
-      </Accordion.Item>
-    </Accordion>
+    <div className="w-96">
+      <Accordion>
+        <Accordion.Item value="1">
+          <Accordion.Trigger>Item 1</Accordion.Trigger>
+          <Accordion.Content>Content for item 1</Accordion.Content>
+        </Accordion.Item>
+        <Accordion.Item value="2">
+          <Accordion.Trigger>Item 2</Accordion.Trigger>
+          <Accordion.Content>Content for item 2</Accordion.Content>
+        </Accordion.Item>
+      </Accordion>
+    </div>
   ),
 };
