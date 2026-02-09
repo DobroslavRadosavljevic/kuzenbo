@@ -9,14 +9,7 @@ const meta = {
   argTypes: {
     variant: {
       control: "select",
-      options: [
-        "default",
-        "outline",
-        "secondary",
-        "ghost",
-        "destructive",
-        "link",
-      ],
+      options: ["default", "outline", "secondary", "ghost", "danger", "link"],
     },
     size: {
       control: "select",
@@ -59,8 +52,8 @@ export const Ghost: Story = {
   args: { children: "Ghost", variant: "ghost" },
 };
 
-export const Destructive: Story = {
-  args: { children: "Destructive", variant: "destructive" },
+export const Danger: Story = {
+  args: { children: "Danger", variant: "danger" },
 };
 
 export const Link: Story = {

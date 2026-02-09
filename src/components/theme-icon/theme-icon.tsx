@@ -21,12 +21,6 @@ export const themeIconVariants = tv({
         // Background: primary color scheme with shadow
         "bg-primary text-primary-foreground shadow-xs",
       ],
-      destructive: [
-        // Background: destructive color scheme with shadow
-        "bg-destructive text-white shadow-xs",
-        // Dark mode: adjusted destructive background
-        "dark:bg-destructive/60",
-      ],
       outline: [
         // Border: visible border with background
         "border bg-background shadow-xs",

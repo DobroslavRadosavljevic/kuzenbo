@@ -81,7 +81,7 @@ export const WithCloseFooter: Story = {
           </Dialog.Description>
         </Dialog.Header>
         <Dialog.Footer showCloseButton>
-          <Button variant="destructive">Confirm</Button>
+          <Button variant="danger">Confirm</Button>
         </Dialog.Footer>
       </Dialog.Content>
     </Dialog>

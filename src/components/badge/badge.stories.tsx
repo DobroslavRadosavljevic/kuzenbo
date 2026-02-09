@@ -12,7 +12,6 @@ const meta = {
       options: [
         "default",
         "secondary",
-        "destructive",
         "outline",
         "ghost",
         "link",
@@ -34,10 +33,6 @@ export const Default: Story = {
 
 export const Secondary: Story = {
   args: { children: "Secondary", variant: "secondary" },
-};
-
-export const Destructive: Story = {
-  args: { children: "Destructive", variant: "destructive" },
 };
 
 export const Outline: Story = {
@@ -65,7 +60,6 @@ export const AllVariants: Story = {
     <div className="flex flex-wrap gap-2">
       <Badge>Default</Badge>
       <Badge variant="secondary">Secondary</Badge>
-      <Badge variant="destructive">Destructive</Badge>
       <Badge variant="outline">Outline</Badge>
       <Badge variant="success">Success</Badge>
       <Badge variant="warning">Warning</Badge>

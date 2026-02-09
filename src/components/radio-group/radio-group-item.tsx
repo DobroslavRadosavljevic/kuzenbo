@@ -6,14 +6,14 @@ import { cn } from "tailwind-variants";
 const RadioGroupItem = ({ className, ...props }: RadioPrimitive.Root.Props) => (
   <RadioPrimitive.Root
     className={cn(
-      "group/radio-group-item peer relative flex aspect-square size-4 shrink-0 cursor-pointer rounded-full border border-input text-primary shadow-xs outline-none after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-[3px] aria-invalid:ring-destructive/20 dark:bg-input/30 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
+      "group/radio-group-item peer relative flex aspect-square size-4 shrink-0 cursor-pointer rounded-full border border-input text-primary shadow-xs outline-none after:absolute after:-inset-x-3 after:-inset-y-2 focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-danger aria-invalid:ring-[3px] aria-invalid:ring-danger/20 dark:bg-input/30 dark:aria-invalid:border-danger/50 dark:aria-invalid:ring-danger/40",
       className
     )}
     data-slot="radio-group-item"
     {...props}
   >
     <RadioPrimitive.Indicator
-      className="flex size-4 items-center justify-center text-primary group-aria-invalid/radio-group-item:text-destructive"
+      className="flex size-4 items-center justify-center text-primary group-aria-invalid/radio-group-item:text-danger"
       data-slot="radio-group-indicator"
     >
       <HugeiconsIcon

@@ -13,7 +13,7 @@ import { FormFieldSet } from "./form-field-set";
 import { FormFieldTitle } from "./form-field-title";
 
 const fieldVariants = tv({
-  base: "group/field flex w-full gap-3 data-[invalid=true]:text-destructive",
+  base: "group/field flex w-full gap-3 data-[invalid=true]:text-danger",
   variants: {
     orientation: {
       vertical: "flex-col *:w-full [&>.sr-only]:w-auto",

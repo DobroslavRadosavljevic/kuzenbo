@@ -21,11 +21,6 @@ const alertVariants = tv({
         "bg-card text-card-foreground",
         "[&_*[data-slot=alert-description]]:text-muted-foreground",
       ],
-      destructive: [
-        "bg-card text-destructive",
-        "*:data-[slot=alert-description]:text-destructive/90",
-        "*:[svg]:text-current",
-      ],
       warning: [
         "border-warning-border",
         "bg-warning text-warning-foreground",

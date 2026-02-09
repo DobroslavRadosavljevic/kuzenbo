@@ -44,7 +44,7 @@ const FormFieldError = ({
 
   return (
     <div
-      className={cn("font-normal text-destructive text-sm", className)}
+      className={cn("font-normal text-danger text-sm", className)}
       data-slot="field-error"
       role="alert"
       {...props}

@@ -100,12 +100,12 @@ const dropzoneVariants = tv({
       },
       reject: {
         root: [
-          // Border: destructive border color
-          "border-destructive",
-          // Background: destructive background with opacity
-          "bg-destructive/10",
-          // Text: destructive text color
-          "text-destructive",
+          // Border: danger border color
+          "border-danger",
+          // Background: danger background with opacity
+          "bg-danger/10",
+          // Text: danger text color
+          "text-danger",
         ],
       },
     },
@@ -156,14 +156,14 @@ const dropzoneVariants = tv({
       status: "reject",
       variant: "filled",
       class: {
-        root: "border-destructive bg-destructive/20",
+        root: "border-danger bg-danger/20",
       },
     },
     {
       status: "reject",
       variant: "light",
       class: {
-        root: "border-destructive bg-destructive/10",
+        root: "border-danger bg-danger/10",
       },
     },
   ],

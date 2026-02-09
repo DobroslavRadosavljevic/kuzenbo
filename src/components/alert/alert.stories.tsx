@@ -16,14 +16,7 @@ const meta = {
   argTypes: {
     variant: {
       control: "select",
-      options: [
-        "default",
-        "destructive",
-        "warning",
-        "danger",
-        "info",
-        "success",
-      ],
+      options: ["default", "warning", "danger", "info", "success"],
     },
   },
 } satisfies Meta<typeof Alert>;
@@ -43,7 +36,7 @@ export const Default: Story = {
   args: { variant: "default" },
 };
 
-export const Destructive: Story = {
+export const Danger: Story = {
   render: (args) => (
     <Alert {...args}>
       <Alert.Title>Error</Alert.Title>
@@ -52,7 +45,7 @@ export const Destructive: Story = {
       </Alert.Description>
     </Alert>
   ),
-  args: { variant: "destructive" },
+  args: { variant: "danger" },
 };
 
 export const Warning: Story = {
