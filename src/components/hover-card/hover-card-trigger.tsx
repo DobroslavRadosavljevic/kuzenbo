@@ -8,7 +8,7 @@ const HoverCardTrigger = ({
   ...props
 }: PreviewCardPrimitive.Trigger.Props) => (
   <PreviewCardPrimitive.Trigger
-    className={cn("cursor-clickable", className)}
+    className={cn("cursor-pointer", className)}
     data-slot="hover-card-trigger"
     {...props}
   />

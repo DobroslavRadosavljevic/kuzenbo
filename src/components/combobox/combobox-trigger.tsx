@@ -12,7 +12,7 @@ const ComboboxTrigger = ({
 }: ComboboxPrimitive.Trigger.Props) => (
   <ComboboxPrimitive.Trigger
     className={cn(
-      "cursor-clickable [&_svg:not([class*='size-'])]:size-4",
+      "cursor-pointer [&_svg:not([class*='size-'])]:size-4",
       className
     )}
     data-slot="combobox-trigger"

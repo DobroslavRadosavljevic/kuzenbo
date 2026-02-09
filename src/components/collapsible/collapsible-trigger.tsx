@@ -8,7 +8,7 @@ const CollapsibleTrigger = ({
   ...props
 }: CollapsiblePrimitive.Trigger.Props) => (
   <CollapsiblePrimitive.Trigger
-    className={cn("cursor-clickable", className)}
+    className={cn("cursor-pointer", className)}
     data-slot="collapsible-trigger"
     {...props}
   />

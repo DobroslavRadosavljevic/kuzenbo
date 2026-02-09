@@ -11,5 +11,8 @@ export const VideoPlayerSeekBackwardButton = ({
   className,
   ...props
 }: VideoPlayerSeekBackwardButtonProps) => (
-  <MediaSeekBackwardButton className={cn("p-2.5", className)} {...props} />
+  <MediaSeekBackwardButton
+    className={cn("cursor-pointer p-2.5", className)}
+    {...props}
+  />
 );

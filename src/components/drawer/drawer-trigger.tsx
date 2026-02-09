@@ -9,7 +9,7 @@ export type DrawerTriggerProps = ComponentProps<typeof DrawerPrimitive.Trigger>;
 
 const DrawerTrigger = ({ className, ...props }: DrawerTriggerProps) => (
   <DrawerPrimitive.Trigger
-    className={cn("cursor-clickable", className)}
+    className={cn("cursor-pointer", className)}
     data-slot="drawer-trigger"
     {...props}
   />

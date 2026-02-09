@@ -12,7 +12,7 @@ export const AutocompleteTrigger = ({
   ...props
 }: AutocompleteTriggerProps) => (
   <BaseAutocomplete.Trigger
-    className={cn("cursor-clickable", className)}
+    className={cn("cursor-pointer", className)}
     data-slot="autocomplete-trigger"
     {...props}
   />

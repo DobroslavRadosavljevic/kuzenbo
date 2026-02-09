@@ -9,5 +9,8 @@ export const VideoPlayerPlayButton = ({
   className,
   ...props
 }: VideoPlayerPlayButtonProps) => (
-  <MediaPlayButton className={cn("p-2.5", className)} {...props} />
+  <MediaPlayButton
+    className={cn("cursor-pointer p-2.5", className)}
+    {...props}
+  />
 );

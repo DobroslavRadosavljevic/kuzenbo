@@ -8,7 +8,7 @@ const PopoverTrigger = ({
   ...props
 }: PopoverPrimitive.Trigger.Props) => (
   <PopoverPrimitive.Trigger
-    className={cn("cursor-clickable", className)}
+    className={cn("cursor-pointer", className)}
     data-slot="popover-trigger"
     {...props}
   />

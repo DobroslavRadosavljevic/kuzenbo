@@ -8,7 +8,7 @@ const SheetTrigger = ({
   ...props
 }: SheetPrimitive.Trigger.Props) => (
   <SheetPrimitive.Trigger
-    className={cn("cursor-clickable", className)}
+    className={cn("cursor-pointer", className)}
     data-slot="sheet-trigger"
     {...props}
   />

@@ -12,7 +12,7 @@ export const AutocompleteClear = ({
   ...props
 }: AutocompleteClearProps) => (
   <BaseAutocomplete.Clear
-    className={cn("cursor-clickable", className)}
+    className={cn("cursor-pointer", className)}
     data-slot="autocomplete-clear"
     {...props}
   />

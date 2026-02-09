@@ -8,7 +8,7 @@ const TooltipTrigger = ({
   ...props
 }: TooltipPrimitive.Trigger.Props) => (
   <TooltipPrimitive.Trigger
-    className={cn("cursor-clickable", className)}
+    className={cn("cursor-pointer", className)}
     data-slot="tooltip-trigger"
     {...props}
   />

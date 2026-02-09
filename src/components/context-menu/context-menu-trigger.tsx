@@ -6,7 +6,7 @@ const ContextMenuTrigger = ({
   ...props
 }: ContextMenuPrimitive.Trigger.Props) => (
   <ContextMenuPrimitive.Trigger
-    className={cn("cursor-clickable select-none", className)}
+    className={cn("cursor-pointer select-none", className)}
     data-slot="context-menu-trigger"
     {...props}
   />

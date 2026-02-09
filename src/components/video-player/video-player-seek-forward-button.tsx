@@ -11,5 +11,8 @@ export const VideoPlayerSeekForwardButton = ({
   className,
   ...props
 }: VideoPlayerSeekForwardButtonProps) => (
-  <MediaSeekForwardButton className={cn("p-2.5", className)} {...props} />
+  <MediaSeekForwardButton
+    className={cn("cursor-pointer p-2.5", className)}
+    {...props}
+  />
 );

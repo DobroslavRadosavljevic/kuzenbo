@@ -9,5 +9,8 @@ export const VideoPlayerMuteButton = ({
   className,
   ...props
 }: VideoPlayerMuteButtonProps) => (
-  <MediaMuteButton className={cn("p-2.5", className)} {...props} />
+  <MediaMuteButton
+    className={cn("cursor-pointer p-2.5", className)}
+    {...props}
+  />
 );

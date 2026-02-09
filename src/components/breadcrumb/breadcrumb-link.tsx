@@ -12,7 +12,7 @@ const BreadcrumbLink = ({
     props: mergeProps<"a">(
       {
         className: cn(
-          "cursor-clickable transition-colors hover:text-foreground",
+          "cursor-pointer transition-colors hover:text-foreground",
           className
         ),
       },

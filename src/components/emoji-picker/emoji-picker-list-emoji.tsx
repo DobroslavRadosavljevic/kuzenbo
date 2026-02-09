@@ -10,7 +10,7 @@ export const EmojiPickerListEmoji = ({
 }: EmojiPickerListEmojiProps) => (
   <button
     type="button"
-    className="flex size-8 items-center justify-center rounded-md text-lg data-active:bg-accent"
+    className="flex size-8 cursor-pointer items-center justify-center rounded-md text-lg data-active:bg-accent"
     data-slot="emoji-picker-list-emoji"
     {...restProps}
   >
