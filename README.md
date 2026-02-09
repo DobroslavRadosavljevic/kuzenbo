@@ -8,34 +8,13 @@ Combines the best design patterns from [shadcn/ui](https://ui.shadcn.com/), [Her
 
 ```bash
 npm install kuzenbo
+# or
+pnpm add kuzenbo
+# or
+yarn add kuzenbo
+# or
+bun add kuzenbo
 ```
-
-### Peer Dependencies
-
-React is required:
-
-```bash
-npm install react react-dom
-```
-
-Some components require additional peer dependencies. Install only what you need:
-
-| Component   | Required packages                     |
-| ----------- | ------------------------------------- |
-| Calendar    | `react-day-picker`                    |
-| Carousel    | `embla-carousel embla-carousel-react` |
-| Chart       | `recharts`                            |
-| Command     | `cmdk`                                |
-| CountryFlag | `country-flag-icons`                  |
-| Drawer      | `vaul`                                |
-| Dropzone    | `react-dropzone`                      |
-| EmojiPicker | `frimousse`                           |
-| InputOTP    | `input-otp`                           |
-| Marquee     | `react-fast-marquee`                  |
-| QRCode      | `qrcode culori`                       |
-| Resizable   | `react-resizable-panels`              |
-| Textarea    | `react-textarea-autosize`             |
-| VideoPlayer | `media-chrome`                        |
 
 ## Tailwind CSS v4 Setup
 
@@ -47,10 +26,20 @@ Kuzenbo requires Tailwind CSS v4. Add the following to your main CSS file:
 @source "../node_modules/kuzenbo/dist";
 ```
 
-- `@import "kuzenbo/styles.css"` registers the theme tokens (colors, radius) with Tailwind and provides default light/dark mode values
-- `@source` tells Tailwind to scan the library's dist for utility classes
+**Two directives, different resolution:**
 
-> The `@source` path is relative to your CSS file. Adjust if your CSS file is not at the project root.
+- **`@import "kuzenbo/styles.css"`** — Uses a package specifier. Your bundler (Vite, webpack, etc.) resolves it from `node_modules`, so no path adjustment needed. This pulls in theme tokens (colors, radius) and default light/dark mode values.
+- **`@source "../node_modules/kuzenbo/dist"`** — Uses a filesystem path. Tailwind's content scanner does not resolve package names; it expects a path relative to the CSS file. This tells Tailwind where to scan for utility classes.
+
+**Path adjustment:** The `@source` path is relative to your main CSS file. Examples:
+
+| CSS file location  | `@source` path                    |
+| ------------------ | --------------------------------- |
+| `src/app.css`      | `../node_modules/kuzenbo/dist`    |
+| `app/globals.css`  | `../node_modules/kuzenbo/dist`    |
+| `styles/index.css` | `../../node_modules/kuzenbo/dist` |
+
+With **pnpm**, you may need the explicit dist path (e.g. `../node_modules/kuzenbo/dist`) rather than just `../node_modules/kuzenbo` due to symlinks.
 
 ### Customizing the theme
 
@@ -102,20 +91,6 @@ export default function App() {
 }
 ```
 
-### Component with optional peer dep
-
-```bash
-npm install react-day-picker
-```
-
-```tsx
-import { Calendar } from "kuzenbo";
-
-export default function App() {
-  return <Calendar mode="single" />;
-}
-```
-
 ## Components
 
 ### Layout
@@ -145,10 +120,6 @@ Avatar, Badge, Calendar, Carousel, Chart, CountryFlag, EmojiPicker, GoogleLogo, 
 ### Actions
 
 Affix, Button, ButtonGroup, Command, Toggle, ToggleGroup
-
-### Typography (planned)
-
-Anchor, Blockquote, Heading, InlineCode, Large, Lead, List, Muted, Paragraph, Small, SmallHeading, Text
 
 ### Utilities
 
