@@ -13,4 +13,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: { defaultValue: [50] },
+  render: (args) => (
+    <div className="w-64 px-4">
+      <Slider {...args} />
+    </div>
+  ),
 };

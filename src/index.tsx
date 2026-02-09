@@ -653,6 +653,7 @@ export {
 export {
   Tabs,
   TabsContent,
+  TabsIndicator,
   TabsList,
   TabsTrigger,
 } from "./components/tabs/tabs";

@@ -19,6 +19,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: { orientation: "horizontal" },
+  render: (args) => (
+    <div className="flex w-full flex-col gap-4">
+      <p className="text-sm">Content above</p>
+      <Separator {...args} />
+      <p className="text-sm">Content below</p>
+    </div>
+  ),
 };
 
 export const Vertical: Story = {

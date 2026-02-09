@@ -4,11 +4,12 @@ import { Tabs as TabsPrimitive } from "@base-ui/react/tabs";
 import { cn, tv, type VariantProps } from "tailwind-variants";
 
 const tabsListVariants = tv({
-  base: "group/tabs-list inline-flex w-fit items-center justify-center rounded-md p-1 text-muted-foreground data-[variant=line]:rounded-none group-data-[orientation=vertical]/tabs:h-fit group-data-horizontal/tabs:h-8 group-data-[orientation=vertical]/tabs:flex-col",
+  base: "group/tabs-list relative z-0 inline-flex w-fit items-center justify-center text-muted-foreground group-data-[orientation=vertical]/tabs:h-fit group-data-[orientation=horizontal]/tabs:h-8 group-data-[orientation=vertical]/tabs:flex-col",
   variants: {
     variant: {
-      default: "bg-muted",
-      line: "gap-1 bg-transparent",
+      default:
+        "rounded-md bg-muted p-1 group-data-[orientation=vertical]/tabs:flex-col",
+      line: "flex gap-1 rounded-none bg-transparent px-1 shadow-[inset_0_-1px] shadow-border",
     },
   },
   defaultVariants: {
