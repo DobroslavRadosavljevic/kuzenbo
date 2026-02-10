@@ -68,6 +68,81 @@ export default function App() {
 }
 ```
 
+### CSP Provider
+
+Re-exported from Base UI — [docs](https://base-ui.com/react/utils/csp-provider). For apps enforcing strict Content Security Policy, wrap your app with `CSPProvider`:
+
+```tsx
+import { CSPProvider, Button } from "kuzenbo";
+
+function App({ nonce }: { nonce?: string }) {
+  return (
+    <CSPProvider nonce={nonce}>
+      <Button>Click me</Button>
+    </CSPProvider>
+  );
+}
+```
+
+Or use `disableStyleElements` to avoid inline `<style>` tags (rely on external CSS instead).
+
+### Direction Provider
+
+Re-exported from Base UI — [docs](https://base-ui.com/react/utils/direction-provider). For RTL support, wrap your app with `DirectionProvider` (also set `dir="rtl"` on a parent):
+
+```tsx
+import { DirectionProvider, Slider } from "kuzenbo";
+
+export default function RTLExample() {
+  return (
+    <div dir="rtl">
+      <DirectionProvider direction="rtl">
+        <Slider defaultValue={25} />
+      </DirectionProvider>
+    </div>
+  );
+}
+```
+
+### mergeProps
+
+Re-exported from Base UI — [docs](https://base-ui.com/react/utils/merge-props). Merges multiple prop objects (e.g. internal + user props). Rightmost wins for most keys; `className` is concatenated; event handlers run in order (rightmost first):
+
+```tsx
+import { mergeProps } from "kuzenbo";
+
+// In a render callback or custom component
+<button
+  {...mergeProps<"button">(
+    { className: "base", onClick: handlerA },
+    { className: "override", onClick: handlerB }
+  )}
+/>;
+// Result: className="override base", both onClick handlers run (handlerB first)
+```
+
+Call `event.preventBaseUIHandler()` in handlers to skip Base UI's internal logic.
+
+### useRender
+
+Re-exported from Base UI — [docs](https://base-ui.com/react/utils/use-render). Hook for building custom components with a `render` prop (alternative to `asChild`):
+
+```tsx
+import { useRender, mergeProps } from "kuzenbo";
+
+function Text({ render, ...props }) {
+  return useRender({
+    defaultTagName: "p",
+    render,
+    props: mergeProps<"p">({ className: "text-base" }, props),
+  });
+}
+
+// Usage
+<Text>Default paragraph</Text>
+<Text render={<strong />}>Rendered as strong</Text>
+```
+
 ### Compound component (dot notation)
 
 ```tsx
@@ -123,7 +198,9 @@ Affix, Button, ButtonGroup, Command, Toggle, ToggleGroup
 
 ### Utilities
 
-Item, Portal
+Item, Portal, CSPProvider, DirectionProvider, mergeProps, useRender
+
+_CSPProvider, DirectionProvider, mergeProps, and useRender are re-exports from [@base-ui/react](https://base-ui.com/) — [CSP Provider](https://base-ui.com/react/utils/csp-provider) · [Direction Provider](https://base-ui.com/react/utils/direction-provider) · [mergeProps](https://base-ui.com/react/utils/merge-props) · [useRender](https://base-ui.com/react/utils/use-render)._
 
 ## Development
 

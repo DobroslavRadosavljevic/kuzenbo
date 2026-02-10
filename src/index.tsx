@@ -529,6 +529,11 @@ export {
 export { Portal } from "./components/portal/portal";
 export type { BasePortalProps, PortalProps } from "./components/portal/portal";
 
+export { CSPProvider } from "@base-ui/react/csp-provider";
+export { DirectionProvider } from "@base-ui/react/direction-provider";
+export { mergeProps } from "@base-ui/react/merge-props";
+export { useRender } from "@base-ui/react/use-render";
+
 export {
   Progress,
   ProgressIndicator,
