@@ -35,6 +35,42 @@ describe("Drawer", () => {
     expect(screen.getByText("Drawer Title")).toBeDefined();
   });
 
+  it("does not warn when description is omitted", async () => {
+    const user = userEvent.setup();
+    const consoleWarn = console.warn;
+    const consoleError = console.error;
+    const messages: unknown[][] = [];
+
+    const capture = (...args: unknown[]) => {
+      messages.push(args);
+    };
+
+    console.warn = capture;
+    console.error = capture;
+
+    try {
+      render(
+        <Drawer onOpenChange={noop}>
+          <Drawer.Trigger>Open</Drawer.Trigger>
+          <Drawer.Content>
+            <Drawer.Title>Drawer Title</Drawer.Title>
+          </Drawer.Content>
+        </Drawer>
+      );
+
+      await user.click(screen.getByRole("button", { name: "Open" }));
+
+      const hasMissingDescriptionWarning = messages.some((args) =>
+        args.some((arg) => String(arg).includes("Missing `Description`"))
+      );
+
+      expect(hasMissingDescriptionWarning).toBe(false);
+    } finally {
+      console.warn = consoleWarn;
+      console.error = consoleError;
+    }
+  });
+
   it("has data-slot on root", () => {
     render(
       <Drawer onOpenChange={noop}>

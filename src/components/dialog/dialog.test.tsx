@@ -26,6 +26,37 @@ describe("Dialog", () => {
     expect(screen.getByText("Dialog content")).toBeDefined();
   });
 
+  it("does not warn when description is omitted", async () => {
+    const user = userEvent.setup();
+    const consoleWarn = console.warn;
+    const warnings: unknown[][] = [];
+
+    console.warn = (...args: unknown[]) => {
+      warnings.push(args);
+    };
+
+    try {
+      render(
+        <Dialog>
+          <Dialog.Trigger>Open</Dialog.Trigger>
+          <Dialog.Content>
+            <Dialog.Title>Title</Dialog.Title>
+          </Dialog.Content>
+        </Dialog>
+      );
+
+      await user.click(screen.getByRole("button", { name: "Open" }));
+
+      const hasMissingDescriptionWarning = warnings.some((args) =>
+        args.some((arg) => String(arg).includes("Missing `Description`"))
+      );
+
+      expect(hasMissingDescriptionWarning).toBe(false);
+    } finally {
+      console.warn = consoleWarn;
+    }
+  });
+
   it("has data-slot on dialog root when open", async () => {
     const user = userEvent.setup();
     render(
