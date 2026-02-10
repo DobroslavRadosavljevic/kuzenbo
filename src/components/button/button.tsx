@@ -17,7 +17,7 @@ const buttonVariants = tv({
       ghost:
         "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
       danger:
-        "bg-danger/10 text-danger hover:bg-danger/20 focus-visible:border-danger/40 focus-visible:ring-danger/20 dark:bg-danger/20 dark:focus-visible:ring-danger/40 dark:hover:bg-danger/30",
+        "bg-danger text-danger-foreground hover:bg-danger/90 focus-visible:border-danger/40 focus-visible:ring-danger/30 dark:bg-danger dark:text-danger-foreground dark:hover:bg-danger/80 dark:focus-visible:ring-danger/40",
       link: "text-primary underline-offset-4 hover:underline",
     },
     size: {
