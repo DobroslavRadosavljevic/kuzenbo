@@ -1,4 +1,4 @@
 [test]
-root = "./tests"
+root = "./src"
 preload = ["./tests/setup.ts"]
 

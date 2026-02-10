@@ -24,5 +24,6 @@
     "eslint-plugin-import/no-relative-parent-imports": "off",
     "eslint-plugin-unicorn/no-useless-spread": "off",
     "eslint/complexity": "off"
-  }
+  },
+  "ignorePatterns": ["opensrc"]
 }

@@ -12,7 +12,7 @@ const componentEntries = Object.fromEntries(
 const hooksDir = resolve(import.meta.dirname, "src/hooks");
 const hookEntries = Object.fromEntries(
   readdirSync(hooksDir)
-    .filter((f) => f.endsWith(".ts"))
+    .filter((f) => f.endsWith(".ts") && !f.includes(".test."))
     .map((f) => [`hooks/${f.replace(".ts", "")}`, `./src/hooks/${f}`])
 );
 
