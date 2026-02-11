@@ -202,6 +202,23 @@ Item, Portal, CSPProvider, DirectionProvider, mergeProps, useRender
 
 _CSPProvider, DirectionProvider, mergeProps, and useRender are re-exports from [@base-ui/react](https://base-ui.com/) — [CSP Provider](https://base-ui.com/react/utils/csp-provider) · [Direction Provider](https://base-ui.com/react/utils/direction-provider) · [mergeProps](https://base-ui.com/react/utils/merge-props) · [useRender](https://base-ui.com/react/utils/use-render)._
 
+## AI Skill (skills.sh)
+
+This repository includes a reusable agent skill at [`SKILL.md`](./SKILL.md)
+for integrating and theming Kuzenbo in application codebases.
+
+Install it with the Skills CLI:
+
+```bash
+npx skills add https://github.com/DobroslavRadosavljevic/kuzenbo --skill using-kuzenbo-in-apps
+```
+
+You can also install by repository shorthand:
+
+```bash
+npx skills add DobroslavRadosavljevic/kuzenbo
+```
+
 ## Development
 
 | Command             | Description                         |
