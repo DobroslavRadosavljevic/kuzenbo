@@ -3,6 +3,12 @@
 import { Tooltip as TooltipPrimitive } from "@base-ui/react/tooltip";
 import { cn } from "tailwind-variants";
 
+import {
+  kbOverlayDirectionalStateClasses,
+  kbOverlaySurfaceStateClasses,
+  kbOverlayTransitionClasses,
+} from "@/lib/motion";
+
 const TooltipContent = ({
   className,
   side = "top",
@@ -26,7 +32,10 @@ const TooltipContent = ({
     >
       <TooltipPrimitive.Popup
         className={cn(
-          "data-open:fade-in-0 data-open:zoom-in-95 data-[state=delayed-open]:fade-in-0 data-[state=delayed-open]:zoom-in-95 data-closed:fade-out-0 data-closed:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 w-fit max-w-xs origin-(--transform-origin) rounded-md bg-foreground px-3 py-1.5 text-background text-xs data-[state=delayed-open]:animate-in data-closed:animate-out data-open:animate-in",
+          "z-50 w-fit max-w-xs origin-(--transform-origin) rounded-md bg-foreground px-3 py-1.5 text-background text-xs",
+          kbOverlayTransitionClasses,
+          kbOverlaySurfaceStateClasses,
+          kbOverlayDirectionalStateClasses,
           className
         )}
         data-slot="tooltip-content"

@@ -650,9 +650,6 @@ export type {
 export { Spinner } from "./components/spinner/spinner";
 export type { SpinnerProps } from "./components/spinner/spinner";
 
-export { Surface, surfaceVariants } from "./components/surface/surface";
-export type { SurfaceProps } from "./components/surface/surface";
-
 export { Switch } from "./components/switch/switch";
 export type { SwitchProps } from "./components/switch/switch";
 

@@ -36,6 +36,9 @@ describe("Button", () => {
     render(<Button disabled>Disabled</Button>);
     const button = screen.getByRole("button");
     expect(button).toHaveProperty("disabled", true);
+    expect(
+      button.className.includes("disabled:motion-safe:active:[scale:1]")
+    ).toBe(true);
   });
 
   it("passes through aria-label", () => {
@@ -46,5 +49,33 @@ describe("Button", () => {
   it("spreads rest props onto the button element", () => {
     render(<Button data-testid="my-button">Test</Button>);
     expect(screen.getByTestId("my-button")).toBeDefined();
+  });
+
+  it("disables press scaling while loading", () => {
+    render(<Button isLoading>Saving</Button>);
+    const button = screen.getByRole("button");
+    expect(button.dataset.loading).toBe("true");
+    expect(button).toHaveProperty("disabled", true);
+    expect(
+      button.className.includes("data-loading:motion-safe:active:[scale:1]")
+    ).toBe(true);
+  });
+
+  it("supports reduced-motion media query overrides in tests", () => {
+    const setReducedMotion = (
+      globalThis as {
+        __setReducedMotion?: (value: boolean) => void;
+      }
+    ).__setReducedMotion;
+
+    setReducedMotion?.(true);
+    expect(window.matchMedia("(prefers-reduced-motion: reduce)").matches).toBe(
+      true
+    );
+
+    setReducedMotion?.(false);
+    expect(window.matchMedia("(prefers-reduced-motion: reduce)").matches).toBe(
+      false
+    );
   });
 });

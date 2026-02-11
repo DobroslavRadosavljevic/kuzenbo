@@ -18,7 +18,7 @@ describe("ContextMenu", () => {
     expect(screen.getByText("Right-click here")).toBeDefined();
   });
 
-  it("opens on context menu", () => {
+  it("opens on context menu", async () => {
     render(
       <ContextMenu>
         <ContextMenu.Trigger>Right-click</ContextMenu.Trigger>
@@ -28,7 +28,7 @@ describe("ContextMenu", () => {
       </ContextMenu>
     );
     fireEvent.contextMenu(screen.getByText("Right-click"));
-    expect(screen.getByText("Copy")).toBeDefined();
+    expect(await screen.findByText("Copy")).toBeDefined();
   });
 
   it("has data-slot on root", () => {

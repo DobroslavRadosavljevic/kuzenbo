@@ -36,8 +36,8 @@ describe("Select", () => {
       </Select>
     );
     await user.click(screen.getByText("Choose"));
-    expect(screen.getByText("Option A")).toBeDefined();
-    expect(screen.getByText("Option B")).toBeDefined();
+    expect(await screen.findByText("Option A")).toBeDefined();
+    expect(await screen.findByText("Option B")).toBeDefined();
   });
 
   it("selects value on item click", async () => {
@@ -54,7 +54,7 @@ describe("Select", () => {
       </Select>
     );
     await user.click(screen.getByText("Choose"));
-    await user.click(screen.getByText("Option A"));
+    await user.click(await screen.findByText("Option A"));
     expect(screen.getByText("Option A")).toBeDefined();
   });
 

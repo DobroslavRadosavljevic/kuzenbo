@@ -21,9 +21,9 @@ describe("Dialog", () => {
 
     expect(screen.getByRole("button", { name: "Open" })).toBeDefined();
     await user.click(screen.getByRole("button", { name: "Open" }));
-    expect(screen.getByRole("dialog")).toBeDefined();
-    expect(screen.getByText("Test Dialog")).toBeDefined();
-    expect(screen.getByText("Dialog content")).toBeDefined();
+    expect(await screen.findByRole("dialog")).toBeDefined();
+    expect(await screen.findByText("Test Dialog")).toBeDefined();
+    expect(await screen.findByText("Dialog content")).toBeDefined();
   });
 
   it("has data-slot on dialog root when open", async () => {

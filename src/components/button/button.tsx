@@ -4,9 +4,19 @@ import { Button as ButtonPrimitive } from "@base-ui/react/button";
 import { cn, tv, type VariantProps } from "tailwind-variants";
 
 import { Spinner } from "@/components/spinner/spinner";
+import {
+  kbInteractiveTransitionClasses,
+  kbPressableInteractionClasses,
+  kbStateTransitionClasses,
+} from "@/lib/motion";
 
 const buttonVariants = tv({
-  base: "group/button inline-flex shrink-0 cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-clip-padding font-medium text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-danger aria-invalid:ring-[3px] aria-invalid:ring-danger/20 dark:aria-invalid:border-danger/50 dark:aria-invalid:ring-danger/40 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+  base: cn(
+    "group/button inline-flex shrink-0 cursor-pointer select-none items-center justify-center whitespace-nowrap rounded-md border border-transparent bg-clip-padding font-medium text-sm outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-danger aria-invalid:ring-[3px] aria-invalid:ring-danger/20 dark:aria-invalid:border-danger/50 dark:aria-invalid:ring-danger/40 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+    kbInteractiveTransitionClasses,
+    kbPressableInteractionClasses,
+    "disabled:motion-safe:active:[scale:1] data-loading:motion-safe:active:[scale:1]"
+  ),
   variants: {
     variant: {
       default: "bg-primary text-primary-foreground [a]:hover:bg-primary/80",
@@ -59,7 +69,8 @@ const ButtonContent = ({
   <span className="relative inline-flex items-center justify-center">
     <span
       className={cn(
-        "inline-flex items-center justify-center gap-2 transition-all duration-200",
+        "inline-flex items-center justify-center gap-2",
+        kbStateTransitionClasses,
         isLoading
           ? "pointer-events-none -translate-y-full opacity-0"
           : "translate-y-0 opacity-100"
@@ -69,7 +80,8 @@ const ButtonContent = ({
     </span>
     <span
       className={cn(
-        "absolute inset-0 inline-flex items-center justify-center transition-all duration-200",
+        "absolute inset-0 inline-flex items-center justify-center",
+        kbStateTransitionClasses,
         isLoading
           ? "translate-y-0 opacity-100"
           : "pointer-events-none -translate-y-full opacity-0"

@@ -6,6 +6,8 @@ import type { Tooltip } from "recharts";
 import { useMemo } from "react";
 import { cn } from "tailwind-variants";
 
+import { kbStateTransitionClasses } from "@/lib/motion";
+
 import { getPayloadConfigFromPayload } from "./chart-utils";
 import { useChart } from "./use-chart";
 
@@ -79,6 +81,7 @@ const ChartTooltipContent = ({
     <div
       className={cn(
         "grid min-w-32 items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl",
+        kbStateTransitionClasses,
         className
       )}
     >

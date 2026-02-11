@@ -30,7 +30,7 @@ describe("Popover", () => {
       </Popover>
     );
     await user.click(screen.getByRole("button", { name: "Open" }));
-    expect(screen.getByText("Popover Title")).toBeDefined();
+    expect(await screen.findByText("Popover Title")).toBeDefined();
   });
 
   it("has data-slot on root", () => {

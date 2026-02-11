@@ -9,7 +9,7 @@ const NavigationMenuIndicator = ({
 }: ComponentProps<typeof NavigationMenuPrimitive.Icon>) => (
   <NavigationMenuPrimitive.Icon
     className={cn(
-      "data-[state=hidden]:fade-out data-[state=visible]:fade-in top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden data-[state=hidden]:animate-out data-[state=visible]:animate-in",
+      "top-full z-[1] flex h-1.5 items-end justify-center overflow-hidden transition-opacity [transition-duration:var(--kb-motion-fast)] [transition-timing-function:var(--kb-ease-standard)] data-[state=hidden]:opacity-0 data-[state=visible]:opacity-100",
       className
     )}
     data-slot="navigation-menu-indicator"

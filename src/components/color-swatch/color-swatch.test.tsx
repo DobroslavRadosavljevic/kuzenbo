@@ -69,15 +69,15 @@ describe("ColorSwatch", () => {
       <ColorSwatch alphaBackground="auto" color="rgba(0, 0, 0, 0.4)" />
     );
     let swatch = screen.getByRole("img");
-    expect(swatch.className.includes("color-swatch-alpha-bg")).toBe(true);
+    expect((swatch as HTMLElement).dataset.alphaBackground).toBe("true");
 
     rerender(<ColorSwatch alphaBackground="auto" color="rgba(0, 0, 0, 1)" />);
     swatch = screen.getByRole("img");
-    expect(swatch.className.includes("color-swatch-alpha-bg")).toBe(false);
+    expect((swatch as HTMLElement).dataset.alphaBackground).toBe("false");
 
     rerender(<ColorSwatch alphaBackground="auto" color="rgba(0, 0, 0, 0)" />);
     swatch = screen.getByRole("img");
-    expect(swatch.className.includes("color-swatch-alpha-bg")).toBe(true);
+    expect((swatch as HTMLElement).dataset.alphaBackground).toBe("true");
   });
 
   it("renders transparent slash only when fully transparent", () => {

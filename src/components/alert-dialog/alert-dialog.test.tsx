@@ -20,9 +20,9 @@ describe("AlertDialog", () => {
     );
     expect(screen.getByRole("button", { name: "Open" })).toBeDefined();
     await user.click(screen.getByRole("button", { name: "Open" }));
-    expect(screen.getByRole("alertdialog")).toBeDefined();
-    expect(screen.getByText("Confirm")).toBeDefined();
-    expect(screen.getByText("Are you sure?")).toBeDefined();
+    expect(await screen.findByRole("alertdialog")).toBeDefined();
+    expect(await screen.findByText("Confirm")).toBeDefined();
+    expect(await screen.findByText("Are you sure?")).toBeDefined();
   });
 
   it("has data-slot on content when open", async () => {

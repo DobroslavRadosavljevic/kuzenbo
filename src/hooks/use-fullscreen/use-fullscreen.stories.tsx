@@ -12,8 +12,8 @@ const FullscreenDemo = () => {
     <div
       ref={ref}
       className={cn(
-        "flex h-48 flex-col gap-4 rounded-lg bg-surface-1 p-6",
-        "border border-surface-3"
+        "flex h-48 flex-col gap-4 rounded-lg bg-card p-6",
+        "border border-border"
       )}
     >
       <div className="text-sm text-muted-foreground">
@@ -29,7 +29,7 @@ const FullscreenDemo = () => {
 const NestedTargetDemo = () => {
   const { ref, toggle, fullscreen } = useFullscreen();
   return (
-    <div className="flex w-96 flex-col gap-3 rounded-lg border border-surface-3 p-4">
+    <div className="flex w-96 flex-col gap-3 rounded-lg border border-border p-4">
       <div className="flex items-center justify-between">
         <span className="text-sm text-muted-foreground">
           Fullscreen: <strong>{fullscreen ? "Yes" : "No"}</strong>
@@ -42,7 +42,7 @@ const NestedTargetDemo = () => {
         ref={ref}
         className={cn(
           "flex min-h-40 items-center justify-center rounded-lg",
-          "bg-surface-2 text-muted-foreground"
+          "bg-muted text-muted-foreground"
         )}
       >
         <span>Only this area goes fullscreen</span>
@@ -54,8 +54,8 @@ const NestedTargetDemo = () => {
 const MediaContentDemo = () => {
   const { ref, toggle, fullscreen } = useFullscreen();
   return (
-    <div className="flex w-[420px] flex-col gap-2 rounded-lg border border-surface-3 overflow-hidden">
-      <div className="flex items-center gap-2 border-b border-surface-3 px-3 py-2">
+    <div className="flex w-[420px] flex-col gap-2 overflow-hidden rounded-lg border border-border">
+      <div className="flex items-center gap-2 border-b border-border px-3 py-2">
         <Button size="xs" onClick={toggle}>
           {fullscreen ? "Exit Fullscreen" : "Fullscreen"}
         </Button>
@@ -67,7 +67,7 @@ const MediaContentDemo = () => {
         ref={ref}
         className={cn(
           "flex aspect-video items-center justify-center",
-          "bg-surface-2 text-muted-foreground text-sm"
+          "bg-muted text-muted-foreground text-sm"
         )}
       >
         Media / video content (fullscreen target)

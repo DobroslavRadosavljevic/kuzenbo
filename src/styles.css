@@ -52,10 +52,15 @@
   --success: oklch(0.979 0.023 158.94);
   --success-foreground: oklch(0.55 0.165 146.61);
   --success-border: oklch(0.941 0.078 158.88);
-  --surface-1: oklch(0.97 0 0);
-  --surface-2: oklch(0.922 0 0);
-  --surface-3: oklch(0.874 0 0);
-  --surface-4: oklch(0.826 0 0);
+
+  /* Kuzenbo motion */
+  --kb-motion-fast: 120ms;
+  --kb-motion-base: 160ms;
+  --kb-motion-slow: 220ms;
+  --kb-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --kb-press-scale: 0.98;
+  --default-transition-duration: var(--kb-motion-base);
+  --default-transition-timing-function: var(--kb-ease-standard);
 }
 
 .dark {
@@ -106,10 +111,6 @@
   --success: oklch(0.209 0.0487 158.25);
   --success-foreground: oklch(0.862 0.169 157.764);
   --success-border: oklch(0.316 0.082 152.3);
-  --surface-1: oklch(0.145 0 0);
-  --surface-2: oklch(0.193 0 0);
-  --surface-3: oklch(0.241 0 0);
-  --surface-4: oklch(0.289 0 0);
 }
 
 @theme inline {
@@ -165,11 +166,6 @@
   --color-success: var(--success);
   --color-success-foreground: var(--success-foreground);
   --color-success-border: var(--success-border);
-
-  --color-surface-1: var(--surface-1);
-  --color-surface-2: var(--surface-2);
-  --color-surface-3: var(--surface-3);
-  --color-surface-4: var(--surface-4);
 }
 
 @layer base {
@@ -195,6 +191,144 @@
   }
   html[data-base-ui-scroll-locked] {
     scroll-behavior: auto;
+  }
+  :where([data-slot][class*="cursor-pointer"]) {
+    transition-property:
+      color, background-color, border-color, box-shadow, opacity, translate,
+      scale;
+    transition-duration: var(--kb-motion-base);
+    transition-timing-function: var(--kb-ease-standard);
+  }
+  :where(
+    [data-slot="alert-dialog-content"],
+    [data-slot="alert-dialog-overlay"],
+    [data-slot="autocomplete-content"],
+    [data-slot="combobox-content"],
+    [data-slot="context-menu-content"],
+    [data-slot="context-menu-sub-content"],
+    [data-slot="dialog-content"],
+    [data-slot="dialog-overlay"],
+    [data-slot="drawer-content"],
+    [data-slot="drawer-overlay"],
+    [data-slot="dropdown-menu-content"],
+    [data-slot="dropdown-menu-sub-content"],
+    [data-slot="hover-card-content"],
+    [data-slot="menubar-content"],
+    [data-slot="menubar-sub-content"],
+    [data-slot="navigation-menu-content"],
+    [data-slot="navigation-menu-positioner"],
+    [data-slot="popover-content"],
+    [data-slot="select-content"],
+    [data-slot="sheet-content"],
+    [data-slot="sheet-overlay"],
+    [data-slot="tooltip-content"]
+  ) {
+    transition-timing-function: var(--kb-ease-standard);
+  }
+  :where(
+    [data-slot="alert-dialog-content"],
+    [data-slot="alert-dialog-overlay"],
+    [data-slot="autocomplete-content"],
+    [data-slot="combobox-content"],
+    [data-slot="context-menu-content"],
+    [data-slot="context-menu-sub-content"],
+    [data-slot="dialog-content"],
+    [data-slot="dialog-overlay"],
+    [data-slot="drawer-content"],
+    [data-slot="drawer-overlay"],
+    [data-slot="dropdown-menu-content"],
+    [data-slot="dropdown-menu-sub-content"],
+    [data-slot="hover-card-content"],
+    [data-slot="menubar-content"],
+    [data-slot="menubar-sub-content"],
+    [data-slot="popover-content"],
+    [data-slot="select-content"],
+    [data-slot="sheet-content"],
+    [data-slot="sheet-overlay"],
+    [data-slot="tooltip-content"]
+  ) {
+    transition-duration: var(--kb-motion-base);
+  }
+  :where(
+    [data-slot="navigation-menu-content"],
+    [data-slot="navigation-menu-positioner"]
+  ) {
+    transition-duration: var(--kb-motion-slow);
+  }
+  :where([data-slot][class*="cursor-pointer"]):is(
+    :disabled,
+    [disabled],
+    [aria-disabled="true"],
+    [data-disabled="true"],
+    [data-loading="true"]
+  ) {
+    translate: 0 0;
+    scale: 1;
+  }
+  :where([data-slot][class*="cursor-pointer"]):not(
+      :disabled,
+      [disabled],
+      [aria-disabled="true"],
+      [data-disabled="true"],
+      [data-loading="true"]
+    ):active {
+    scale: var(--kb-press-scale);
+  }
+  :where([data-slot="progress-indicator"], [data-slot="meter-indicator"]) {
+    transition-timing-function: var(--kb-ease-standard);
+    transition-duration: var(--kb-motion-base);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    :where([data-slot][class*="cursor-pointer"]):not(
+        :disabled,
+        [disabled],
+        [aria-disabled="true"],
+        [data-disabled="true"],
+        [data-loading="true"]
+      ):is(:hover, :active) {
+      translate: 0 0;
+      scale: 1;
+    }
+    :where(
+      [data-slot="alert-dialog-content"],
+      [data-slot="alert-dialog-overlay"],
+      [data-slot="autocomplete-content"],
+      [data-slot="combobox-content"],
+      [data-slot="context-menu-content"],
+      [data-slot="context-menu-sub-content"],
+      [data-slot="dialog-content"],
+      [data-slot="dialog-overlay"],
+      [data-slot="drawer-content"],
+      [data-slot="drawer-overlay"],
+      [data-slot="dropdown-menu-content"],
+      [data-slot="dropdown-menu-sub-content"],
+      [data-slot="hover-card-content"],
+      [data-slot="menubar-content"],
+      [data-slot="menubar-sub-content"],
+      [data-slot="navigation-menu-content"],
+      [data-slot="navigation-menu-positioner"],
+      [data-slot="popover-content"],
+      [data-slot="select-content"],
+      [data-slot="sheet-content"],
+      [data-slot="sheet-overlay"],
+      [data-slot="tooltip-content"]
+    ) {
+      --tw-enter-scale: 1;
+      --tw-exit-scale: 1;
+      --tw-enter-translate-x: 0;
+      --tw-enter-translate-y: 0;
+      --tw-exit-translate-x: 0;
+      --tw-exit-translate-y: 0;
+      animation-duration: var(--kb-motion-fast);
+      transition-duration: var(--kb-motion-fast);
+    }
+    [data-slot="skeleton"] {
+      animation: none !important;
+    }
+    [data-slot="marquee-content"] {
+      animation: none !important;
+      transform: none !important;
+    }
   }
   .root {
     isolation: isolate;

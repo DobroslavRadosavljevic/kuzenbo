@@ -57,6 +57,7 @@ export type ColorSwatchProps = ColorSwatchVariants &
     shape?: ColorSwatchShape;
     size?: ColorSwatchSize;
     "data-alpha-state"?: ColorSwatchAlphaState;
+    "data-alpha-background"?: "true" | "false";
     "data-disabled"?: "true" | "false";
     "data-shape"?: ColorSwatchShape;
     "data-slot"?: string;
@@ -156,6 +157,7 @@ const ColorSwatch = ({
   };
   const dataAttributes = {
     "data-alpha-state": alphaState,
+    "data-alpha-background": hasAlphaBackground ? "true" : "false",
     "data-disabled": isDisabled ? "true" : "false",
     "data-shape": shape,
   } as const;

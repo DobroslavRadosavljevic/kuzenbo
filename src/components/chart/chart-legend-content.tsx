@@ -5,6 +5,8 @@ import type { Legend } from "recharts";
 
 import { cn } from "tailwind-variants";
 
+import { kbStateTransitionClasses } from "@/lib/motion";
+
 import { getPayloadConfigFromPayload } from "./chart-utils";
 import { useChart } from "./use-chart";
 
@@ -29,6 +31,7 @@ const ChartLegendContent = ({
     <div
       className={cn(
         "flex items-center justify-center gap-4",
+        kbStateTransitionClasses,
         verticalAlign === "top" ? "pb-3" : "pt-3",
         className
       )}

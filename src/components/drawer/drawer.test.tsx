@@ -32,7 +32,7 @@ describe("Drawer", () => {
       </Drawer>
     );
     await user.click(screen.getByRole("button", { name: "Open" }));
-    expect(screen.getByText("Drawer Title")).toBeDefined();
+    expect(await screen.findByText("Drawer Title")).toBeDefined();
   });
 
   it("has data-slot on root", () => {

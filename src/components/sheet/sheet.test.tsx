@@ -30,7 +30,7 @@ describe("Sheet", () => {
       </Sheet>
     );
     await user.click(screen.getByRole("button", { name: "Open" }));
-    expect(screen.getByText("Sheet Title")).toBeDefined();
+    expect(await screen.findByText("Sheet Title")).toBeDefined();
   });
 
   it("has data-slot on root", () => {

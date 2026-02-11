@@ -17,6 +17,7 @@ export const MarqueeContent = ({
   <FastMarquee
     autoFill={autoFill}
     className={cn("py-0.5", className)}
+    data-slot="marquee-content"
     loop={loop}
     pauseOnHover={pauseOnHover}
     {...props}

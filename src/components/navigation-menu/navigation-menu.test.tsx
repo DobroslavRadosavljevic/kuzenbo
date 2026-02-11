@@ -45,7 +45,7 @@ describe("NavigationMenu", () => {
       </NavigationMenu>
     );
     await user.click(screen.getByText("Item"));
-    expect(screen.getByText("Nav Link")).toBeDefined();
+    expect(await screen.findByText("Nav Link")).toBeDefined();
   });
 
   it("has data-slot on root", () => {

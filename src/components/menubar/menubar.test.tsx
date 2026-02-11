@@ -34,7 +34,7 @@ describe("Menubar", () => {
       </Menubar>
     );
     await user.click(screen.getByRole("menuitem", { name: "File" }));
-    expect(screen.getByText("New")).toBeDefined();
+    expect(await screen.findByText("New")).toBeDefined();
   });
 
   it("has data-slot on root", () => {

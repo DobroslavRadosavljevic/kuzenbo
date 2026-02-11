@@ -13,6 +13,7 @@ export type MarqueeProps = ComponentProps<"div">;
 const Marquee = ({ className, ...props }: MarqueeProps) => (
   <div
     className={cn("relative w-full overflow-hidden", className)}
+    data-slot="marquee"
     {...props}
   />
 );

@@ -52,6 +52,24 @@ The default theme uses the shadcn/ui zinc palette. Override any token by redefin
 }
 ```
 
+### Motion behavior
+
+Kuzenbo uses a subtle motion profile by default (short durations and low-amplitude
+scale/translate) and respects reduced-motion preferences automatically.
+
+You can tune the global motion tokens in your app stylesheet:
+
+```css
+:root {
+  --kb-motion-fast: 120ms;
+  --kb-motion-base: 160ms;
+  --kb-motion-slow: 220ms;
+  --kb-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+  --kb-press-scale: 0.98;
+  --kb-hover-lift: -1px;
+}
+```
+
 ## Usage
 
 ### Simple component
@@ -170,7 +188,7 @@ export default function App() {
 
 ### Layout
 
-Accordion, AspectRatio, Card, Collapsible, Empty, Resizable, ScrollArea, Separator, Spacer, Surface
+Accordion, AspectRatio, Card, Collapsible, Empty, Resizable, ScrollArea, Separator, Spacer
 
 ### Forms
 

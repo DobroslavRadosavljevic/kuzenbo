@@ -30,7 +30,7 @@ describe("DropdownMenu", () => {
       </DropdownMenu>
     );
     await user.click(screen.getByRole("button", { name: "Open" }));
-    expect(screen.getByText("Menu Item")).toBeDefined();
+    expect(await screen.findByText("Menu Item")).toBeDefined();
   });
 
   it("has data-slot on root", () => {

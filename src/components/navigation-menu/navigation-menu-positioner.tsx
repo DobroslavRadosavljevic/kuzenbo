@@ -1,6 +1,12 @@
 import { NavigationMenu as NavigationMenuPrimitive } from "@base-ui/react/navigation-menu";
 import { cn } from "tailwind-variants";
 
+import {
+  kbOverlayPositionerTransitionClasses,
+  kbOverlaySurfaceStateClasses,
+  kbOverlayTransitionSlowClasses,
+} from "@/lib/motion";
+
 const NavigationMenuPositioner = ({
   className,
   side = "bottom",
@@ -14,14 +20,22 @@ const NavigationMenuPositioner = ({
       align={align}
       alignOffset={alignOffset}
       className={cn(
-        "isolate z-50 h-[var(--positioner-height)] w-[var(--positioner-width)] max-w-[var(--available-width)] transition-[top,left,right,bottom] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] data-[instant]:transition-none data-[side=bottom]:before:top-[-10px] data-[side=bottom]:before:right-0 data-[side=bottom]:before:left-0",
+        "isolate z-50 h-[var(--positioner-height)] w-[var(--positioner-width)] max-w-[var(--available-width)] data-[side=bottom]:before:top-[-10px] data-[side=bottom]:before:right-0 data-[side=bottom]:before:left-0",
+        kbOverlayPositionerTransitionClasses,
         className
       )}
+      data-slot="navigation-menu-positioner"
       side={side}
       sideOffset={sideOffset}
       {...props}
     >
-      <NavigationMenuPrimitive.Popup className="relative h-(--popup-height) w-(--popup-width) xs:w-(--popup-width) origin-(--transform-origin) rounded-lg bg-popover text-popover-foreground shadow outline-none ring-1 ring-foreground/10 transition-all ease-[cubic-bezier(0.22,1,0.36,1)] data-[ending-style]:scale-90 data-[starting-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 data-[ending-style]:duration-150">
+      <NavigationMenuPrimitive.Popup
+        className={cn(
+          "relative h-(--popup-height) w-(--popup-width) xs:w-(--popup-width) origin-(--transform-origin) rounded-lg bg-popover text-popover-foreground shadow outline-none ring-1 ring-foreground/10",
+          kbOverlaySurfaceStateClasses,
+          kbOverlayTransitionSlowClasses
+        )}
+      >
         <NavigationMenuPrimitive.Viewport className="relative size-full overflow-hidden" />
       </NavigationMenuPrimitive.Popup>
     </NavigationMenuPrimitive.Positioner>
