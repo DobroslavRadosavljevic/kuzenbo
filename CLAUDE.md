@@ -79,6 +79,8 @@ Key rules:
 
 Tests live in `tests/` using bun's test runner with `@testing-library/react` and `@testing-library/user-event`. Happy-dom is preloaded via `tests/setup.ts`. Path alias `@/` maps to `src/`.
 
+**Regression tests:** When fixing a bug or regression discovered during AI-assisted workflows, add a test that reproduces the failing behavior before the fix and passes after it. This prevents the same issue from recurring.
+
 ### Git Conventions
 
 Conventional commits enforced by commitlint + husky (max 200 char header/body). Pre-commit hook runs lint-staged with `ultracite fix`.
