@@ -226,7 +226,13 @@ export {
   ColorSwatch,
   colorSwatchVariants,
 } from "./components/color-swatch/color-swatch";
-export type { ColorSwatchProps } from "./components/color-swatch/color-swatch";
+export type {
+  ColorSwatchAlphaBackground,
+  ColorSwatchAlphaState,
+  ColorSwatchProps,
+  ColorSwatchShape,
+  ColorSwatchSize,
+} from "./components/color-swatch/color-swatch";
 
 export { CountryFlag } from "./components/country-flag/country-flag";
 export type {

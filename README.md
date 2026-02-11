@@ -192,6 +192,9 @@ Dialog, Drawer, DropdownMenu, ContextMenu, HoverCard, Popover, Sheet
 
 Avatar, Badge, Calendar, Carousel, Chart, ColorSwatch, CountryFlag, EmojiPicker, GoogleLogo, Kbd, Marquee, Pill, QRCode, Table, ThemeIcon, Timeline, VideoPlayer
 
+ColorSwatch gradient migration: use a semantic solid `color` and pass gradients
+via `background`.
+
 ### Actions
 
 Affix, Button, ButtonGroup, Command, Toggle, ToggleGroup

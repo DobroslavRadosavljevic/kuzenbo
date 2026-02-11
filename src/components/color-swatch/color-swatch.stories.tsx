@@ -1,72 +1,112 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
+import { parseColor } from "@react-stately/color";
+
 import { ColorSwatch } from "./color-swatch";
 
 const meta = {
   title: "Components/ColorSwatch",
   component: ColorSwatch,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component:
+          'Gradient migration: pass a semantic solid `color` and a visual `background` value.\n\nBefore: `color="linear-gradient(...)"`\nAfter: `color="#3b82f6" background="linear-gradient(...)"`',
+      },
+    },
+  },
   args: {
-    color: "oklch(0.64 0.2 260)",
-    colorName: "Violet",
+    color: "#3b82f6",
+    colorName: "Blue 500",
+    shape: "square",
+    size: "md",
+    alphaBackground: "auto",
+    slashWhenTransparent: true,
+    withBorder: true,
+    isDisabled: false,
   },
   argTypes: {
-    size: { control: "select", options: ["sm", "md", "lg"] },
-    radius: {
-      control: "select",
-      options: ["none", "sm", "md", "lg", "full"],
+    color: {
+      control: "text",
+      table: { type: { summary: "string | Color" } },
     },
-    withBorder: { control: "boolean" },
-    showAlphaBackground: { control: "boolean" },
-    isDisabled: { control: "boolean" },
-    color: { control: "text" },
+    background: { control: "text" },
     colorName: { control: "text" },
+    size: { control: "select", options: ["xs", "sm", "md", "lg", "xl"] },
+    shape: { control: "select", options: ["square", "circle"] },
+    alphaBackground: {
+      control: "select",
+      options: ["auto", "always", "never"],
+    },
+    slashWhenTransparent: { control: "boolean" },
+    withBorder: { control: "boolean" },
+    isDisabled: { control: "boolean" },
   },
 } satisfies Meta<typeof ColorSwatch>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const DefaultSemantic: Story = {};
 
-export const Sizes: Story = {
+export const ObjectColorInput: Story = {
+  render: () => (
+    <ColorSwatch
+      color={parseColor("hsl(220, 88%, 62%)")}
+      colorName="Object input"
+      size="lg"
+    />
+  ),
+};
+
+export const ShapeVariants: Story = {
   render: () => (
     <div className="flex items-center gap-3">
-      <ColorSwatch color="#16a34a" colorName="Green sm" size="sm" />
-      <ColorSwatch color="#16a34a" colorName="Green md" size="md" />
-      <ColorSwatch color="#16a34a" colorName="Green lg" size="lg" />
+      <ColorSwatch color="#16a34a" colorName="Square" shape="square" />
+      <ColorSwatch color="#16a34a" colorName="Circle" shape="circle" />
     </div>
   ),
 };
 
-export const RadiusVariants: Story = {
+export const SizeScale: Story = {
   render: () => (
     <div className="flex items-center gap-3">
-      <ColorSwatch color="#ef4444" colorName="Red none" radius="none" />
-      <ColorSwatch color="#ef4444" colorName="Red sm" radius="sm" />
-      <ColorSwatch color="#ef4444" colorName="Red md" radius="md" />
-      <ColorSwatch color="#ef4444" colorName="Red lg" radius="lg" />
-      <ColorSwatch color="#ef4444" colorName="Red full" radius="full" />
+      <ColorSwatch color="#ef4444" colorName="XS" size="xs" />
+      <ColorSwatch color="#ef4444" colorName="SM" size="sm" />
+      <ColorSwatch color="#ef4444" colorName="MD" size="md" />
+      <ColorSwatch color="#ef4444" colorName="LG" size="lg" />
+      <ColorSwatch color="#ef4444" colorName="XL" size="xl" />
     </div>
   ),
 };
 
-export const Gradient: Story = {
+export const GradientBackground: Story = {
   args: {
-    color: "linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%)",
-    colorName: "Gradient",
+    color: "#3b82f6",
+    colorName: "Brand gradient",
+    background:
+      "linear-gradient(135deg, rgb(59 130 246) 0%, rgb(139 92 246) 50%, rgb(236 72 153) 100%)",
     size: "lg",
   },
 };
 
-export const WithAlphaBackground: Story = {
+export const AutoAlphaBackground: Story = {
   args: {
-    color:
-      "linear-gradient(135deg, rgb(59 130 246 / 1), rgb(59 130 246 / 0.2))",
-    colorName: "Alpha blue gradient",
-    showAlphaBackground: true,
+    color: "rgba(14, 165, 233, 0.4)",
+    colorName: "Auto alpha",
+    alphaBackground: "auto",
     size: "lg",
-    radius: "md",
+  },
+};
+
+export const TransparentSlash: Story = {
+  args: {
+    color: "rgba(14, 165, 233, 0)",
+    colorName: "Transparent",
+    alphaBackground: "auto",
+    slashWhenTransparent: true,
+    size: "lg",
   },
 };
 
