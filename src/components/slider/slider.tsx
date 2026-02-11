@@ -42,17 +42,17 @@ const Slider = ({
         )}
       >
         <SliderPrimitive.Track
-          className="relative select-none overflow-hidden rounded-full bg-muted data-[orientation=horizontal]:h-1 data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-1"
+          className="relative select-none overflow-hidden rounded-sm bg-muted data-[orientation=horizontal]:h-4 data-[orientation=vertical]:h-full data-[orientation=horizontal]:w-full data-[orientation=vertical]:w-9"
           data-slot="slider-track"
         >
           <SliderPrimitive.Indicator
-            className="select-none bg-primary data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full"
+            className="select-none rounded-sm bg-primary data-[orientation=horizontal]:h-full data-[orientation=vertical]:w-full"
             data-slot="slider-range"
           />
         </SliderPrimitive.Track>
         {Array.from({ length: _values.length }, (_, index) => (
           <SliderPrimitive.Thumb
-            className="relative block size-3 shrink-0 cursor-pointer select-none rounded-full border border-ring bg-white ring-ring/50 transition-[color,box-shadow] after:absolute after:-inset-2 hover:ring-[3px] focus-visible:outline-hidden focus-visible:ring-[3px] active:ring-[3px] disabled:pointer-events-none disabled:opacity-50"
+            className="relative block h-5 w-5 shrink-0 cursor-pointer select-none rounded-sm border border-ring/20 bg-white shadow-md ring-ring/50 transition-[color,box-shadow] hover:ring-[3px] focus-visible:outline-hidden focus-visible:ring-[3px] active:ring-[3px] disabled:pointer-events-none disabled:opacity-50"
             data-slot="slider-thumb"
             key={index}
           />

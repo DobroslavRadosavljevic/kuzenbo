@@ -15,7 +15,7 @@ export const NumberFieldDecrement = ({
 }: NumberFieldDecrementProps) => (
   <BaseNumberField.Decrement
     className={cn(
-      "flex size-9 select-none items-center justify-center rounded-l-md border bg-input transition-colors hover:border-ring/70 disabled:pointer-events-none disabled:opacity-50",
+      "flex size-9 cursor-pointer select-none items-center justify-center rounded-l-md border bg-muted transition-colors hover:border-ring/70 disabled:pointer-events-none disabled:opacity-50",
       className
     )}
     data-slot="number-field-decrement"

@@ -8,7 +8,7 @@ export const VideoPlayerContent = ({
   className,
   ...props
 }: VideoPlayerContentProps) => (
-  <video className={cn("mt-0 mb-0", className)} {...props}>
+  <video slot="media" className={cn("mt-0 mb-0", className)} {...props}>
     <track kind="captions" />
   </video>
 );

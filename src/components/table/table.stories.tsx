@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <Table>
+    <Table className="w-full min-w-96">
       <Table.Header>
         <Table.Row>
           <Table.Head>Name</Table.Head>

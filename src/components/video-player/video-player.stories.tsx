@@ -13,9 +13,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <VideoPlayer className="w-80 rounded-lg overflow-hidden">
+    <VideoPlayer className="w-lg aspect-video rounded-lg overflow-hidden">
       <VideoPlayer.Content
-        src="https://media-files.vidstack.io/720p.mp4"
+        src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+        poster="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
         preload="metadata"
       />
       <VideoPlayer.ControlBar>
