@@ -455,7 +455,6 @@ Public top-level components and utilities exported by Kuzenbo:
 - `ScrollArea`
 - `Separator`
 - `Spacer`
-- `Surface`
 
 ### Forms
 

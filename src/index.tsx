@@ -11,10 +11,10 @@ export type { AffixPosition, AffixProps } from "./components/affix/affix";
 
 export {
   Alert,
-  alertVariants,
   AlertAction,
   AlertDescription,
   AlertTitle,
+  alertVariants,
 } from "./components/alert/alert";
 export type { AlertProps } from "./components/alert/alert";
 
@@ -68,19 +68,19 @@ export {
   useFilter,
 } from "./components/autocomplete/autocomplete";
 export type {
-  AutocompleteProps,
   AutocompleteClearProps,
   AutocompleteCollectionProps,
   AutocompleteContentProps,
   AutocompleteEmptyProps,
-  AutocompleteGroupProps,
   AutocompleteGroupLabelProps,
+  AutocompleteGroupProps,
   AutocompleteIconProps,
   AutocompleteInputProps,
   AutocompleteItemProps,
   AutocompleteListProps,
   AutocompletePortalProps,
   AutocompletePositionerProps,
+  AutocompleteProps,
   AutocompleteRowProps,
   AutocompleteSeparatorProps,
   AutocompleteStatusProps,
@@ -114,9 +114,9 @@ export type { ButtonProps } from "./components/button/button";
 
 export {
   ButtonGroup,
-  buttonGroupVariants,
   ButtonGroupSeparator,
   ButtonGroupText,
+  buttonGroupVariants,
 } from "./components/button-group/button-group";
 
 export {
@@ -222,18 +222,6 @@ export {
   ContextMenuTrigger,
 } from "./components/context-menu/context-menu";
 
-export {
-  ColorSwatch,
-  colorSwatchVariants,
-} from "./components/color-swatch/color-swatch";
-export type {
-  ColorSwatchAlphaBackground,
-  ColorSwatchAlphaState,
-  ColorSwatchProps,
-  ColorSwatchShape,
-  ColorSwatchSize,
-} from "./components/color-swatch/color-swatch";
-
 export { CountryFlag } from "./components/country-flag/country-flag";
 export type {
   CountryCode,
@@ -277,7 +265,6 @@ export {
   DrawerTrigger,
 } from "./components/drawer/drawer";
 export type {
-  DrawerProps,
   DrawerCloseProps,
   DrawerContentProps,
   DrawerDescriptionProps,
@@ -285,6 +272,7 @@ export type {
   DrawerHeaderProps,
   DrawerOverlayProps,
   DrawerPortalProps,
+  DrawerProps,
   DrawerTitleProps,
   DrawerTriggerProps,
 } from "./components/drawer/drawer";
@@ -319,8 +307,8 @@ export {
 export type {
   DropzoneAcceptProps,
   DropzoneIdleProps,
-  DropzoneRejectProps,
   DropzoneProps,
+  DropzoneRejectProps,
   DropzoneVariants,
 } from "./components/dropzone/dropzone";
 
@@ -337,13 +325,13 @@ export {
   EmojiPickerSkinToneSelector,
 } from "./components/emoji-picker/emoji-picker";
 export type {
-  EmojiPickerProps,
-  EmojiPickerActiveEmojiProps,
   EmojiPickerActiveEmojiPreviewProps,
+  EmojiPickerActiveEmojiProps,
   EmojiPickerContentProps,
   EmojiPickerEmptyProps,
   EmojiPickerListProps,
   EmojiPickerLoadingProps,
+  EmojiPickerProps,
   EmojiPickerSearchProps,
   EmojiPickerSkinToneProps,
   EmojiPickerSkinToneSelectorProps,
@@ -360,7 +348,6 @@ export {
 
 export {
   FormField,
-  fieldVariants,
   FormFieldContent,
   FormFieldDescription,
   FormFieldError,
@@ -370,6 +357,7 @@ export {
   FormFieldSeparator,
   FormFieldSet,
   FormFieldTitle,
+  fieldVariants,
 } from "./components/form-field/form-field";
 
 export { GoogleLogo } from "./components/google-logo/google-logo";
@@ -427,10 +415,10 @@ export {
   MarqueeItem,
 } from "./components/marquee/marquee";
 export type {
-  MarqueeProps,
   MarqueeContentProps,
   MarqueeFadeProps,
   MarqueeItemProps,
+  MarqueeProps,
 } from "./components/marquee/marquee";
 
 export {
@@ -460,9 +448,9 @@ export {
   MeterValue,
 } from "./components/meter/meter";
 export type {
-  MeterProps,
   MeterIndicatorProps,
   MeterLabelProps,
+  MeterProps,
   MeterTrackProps,
   MeterValueProps,
 } from "./components/meter/meter";
@@ -489,13 +477,13 @@ export {
   useNumberField,
 } from "./components/number-field/number-field";
 export type {
-  NumberFieldProps,
   NumberFieldDecrementProps,
   NumberFieldGroupProps,
   NumberFieldIncrementProps,
   NumberFieldInputProps,
-  NumberFieldScrubAreaProps,
+  NumberFieldProps,
   NumberFieldScrubAreaCursorProps,
+  NumberFieldScrubAreaProps,
 } from "./components/number-field/number-field";
 
 export {
@@ -519,13 +507,13 @@ export {
   PillStatus,
 } from "./components/pill/pill";
 export type {
-  PillProps,
-  PillAvatarProps,
   PillAvatarGroupProps,
+  PillAvatarProps,
   PillButtonProps,
   PillDeltaProps,
   PillIconProps,
   PillIndicatorProps,
+  PillProps,
   PillStatusProps,
 } from "./components/pill/pill";
 
@@ -565,8 +553,8 @@ export {
 export {
   Rating,
   RatingStar,
-  ratingVariants,
   ratingValueVariants,
+  ratingVariants,
 } from "./components/rating/rating";
 export type { RatingProps } from "./components/rating/rating";
 
@@ -650,9 +638,6 @@ export type {
 export { Spinner } from "./components/spinner/spinner";
 export type { SpinnerProps } from "./components/spinner/spinner";
 
-export { Surface, surfaceVariants } from "./components/surface/surface";
-export type { SurfaceProps } from "./components/surface/surface";
-
 export { Switch } from "./components/switch/switch";
 export type { SwitchProps } from "./components/switch/switch";
 
@@ -705,21 +690,21 @@ export {
   ToastContent,
   ToastDescription,
   ToastPortal,
+  ToastProvider,
   ToastRoot,
   ToastTitle,
   ToastViewport,
-  ToastProvider,
+  createToastManager,
   useToast,
   useToastManager,
-  createToastManager,
 } from "./components/toast/toast";
 export type {
-  ToastProps,
   ToastActionProps,
   ToastCloseProps,
   ToastContentProps,
   ToastDescriptionProps,
   ToastPortalProps,
+  ToastProps,
   ToastRootProps,
   ToastTitleProps,
   ToastViewportProps,
@@ -743,11 +728,11 @@ export {
   ToolbarSeparator,
 } from "./components/toolbar/toolbar";
 export type {
-  ToolbarProps,
   ToolbarButtonProps,
   ToolbarGroupProps,
   ToolbarInputProps,
   ToolbarLinkProps,
+  ToolbarProps,
   ToolbarSeparatorProps,
 } from "./components/toolbar/toolbar";
 
@@ -771,11 +756,11 @@ export {
   VideoPlayerVolumeRange,
 } from "./components/video-player/video-player";
 export type {
-  VideoPlayerProps,
   VideoPlayerContentProps,
   VideoPlayerControlBarProps,
   VideoPlayerMuteButtonProps,
   VideoPlayerPlayButtonProps,
+  VideoPlayerProps,
   VideoPlayerSeekBackwardButtonProps,
   VideoPlayerSeekForwardButtonProps,
   VideoPlayerTimeDisplayProps,

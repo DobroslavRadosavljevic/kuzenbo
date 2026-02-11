@@ -170,7 +170,7 @@ export default function App() {
 
 ### Layout
 
-Accordion, AspectRatio, Card, Collapsible, Empty, Resizable, ScrollArea, Separator, Spacer, Surface
+Accordion, AspectRatio, Card, Collapsible, Empty, Resizable, ScrollArea, Separator, Spacer
 
 ### Forms
 
@@ -190,10 +190,7 @@ Dialog, Drawer, DropdownMenu, ContextMenu, HoverCard, Popover, Sheet
 
 ### Data Display
 
-Avatar, Badge, Calendar, Carousel, Chart, ColorSwatch, CountryFlag, EmojiPicker, GoogleLogo, Kbd, Marquee, Pill, QRCode, Table, ThemeIcon, Timeline, VideoPlayer
-
-ColorSwatch gradient migration: use a semantic solid `color` and pass gradients
-via `background`.
+Avatar, Badge, Calendar, Carousel, Chart, CountryFlag, EmojiPicker, GoogleLogo, Kbd, Marquee, Pill, QRCode, Table, ThemeIcon, Timeline, VideoPlayer
 
 ### Actions
 
