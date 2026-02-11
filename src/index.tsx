@@ -222,6 +222,12 @@ export {
   ContextMenuTrigger,
 } from "./components/context-menu/context-menu";
 
+export {
+  ColorSwatch,
+  colorSwatchVariants,
+} from "./components/color-swatch/color-swatch";
+export type { ColorSwatchProps } from "./components/color-swatch/color-swatch";
+
 export { CountryFlag } from "./components/country-flag/country-flag";
 export type {
   CountryCode,

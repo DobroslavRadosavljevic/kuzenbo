@@ -190,7 +190,7 @@ Dialog, Drawer, DropdownMenu, ContextMenu, HoverCard, Popover, Sheet
 
 ### Data Display
 
-Avatar, Badge, Calendar, Carousel, Chart, CountryFlag, EmojiPicker, GoogleLogo, Kbd, Marquee, Pill, QRCode, Table, ThemeIcon, Timeline, VideoPlayer
+Avatar, Badge, Calendar, Carousel, Chart, ColorSwatch, CountryFlag, EmojiPicker, GoogleLogo, Kbd, Marquee, Pill, QRCode, Table, ThemeIcon, Timeline, VideoPlayer
 
 ### Actions
 
